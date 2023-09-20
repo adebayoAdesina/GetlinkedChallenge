@@ -24,5 +24,8 @@ const SubTitleSectionStyle = styled.div`
   font-weight: 400;
   line-height: 27.5px;
 `;
-
-export {TitleSectionStyle, SubTitleSectionStyle,}
+const FloatStarRight = styled.div`
+  float: right;
+  text-align: right;
+`;
+export {TitleSectionStyle, SubTitleSectionStyle, FloatStarRight}

@@ -1,10 +1,11 @@
 import React from "react";
-import { HomeHeroSection } from "../Components/HomeHeroSection";
+import { HomeHeroSection } from "../Components/HomePage/HomeHeroSection";
 import {Row } from "react-bootstrap";
 import styled from "styled-components";
-import { HomeIntroductionSection } from "../Components/HomeIntroductconSection";
-import { HomeRulesSection } from "../Components/HomeRulesSection";
-import { HomeJudgingCriteriaSection } from "../Components/HomeJudgingCriteriaSection";
+import { HomeIntroductionSection } from "../Components/HomePage/HomeIntroductconSection";
+import { HomeRulesSection } from "../Components/HomePage/HomeRulesSection";
+import { HomeJudgingCriteriaSection } from "../Components/HomePage/HomeJudgingCriteriaSection";
+import { HomeFrequentlySection } from "../Components/HomePage/HomeFrequentlySection";
 
 export const LandingPage = () => {
   return (
@@ -20,6 +21,8 @@ export const LandingPage = () => {
       <HomeRulesSection/>
       <hr/>
       <HomeJudgingCriteriaSection/>
+      <hr/>
+      <HomeFrequentlySection/>
     </div>
   );
 };

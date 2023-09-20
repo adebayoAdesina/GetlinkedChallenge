@@ -3,9 +3,9 @@ import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import {
   TitleSectionStyle,
-  SubTitleSectionStyle,
-} from "../GlobalStyles/GlobalStyles";
-import { RulesImage } from "../utils/image";
+  SubTitleSectionStyle
+} from '../../GlobalStyles/GlobalStyles'
+import { RulesImage } from "../../utils/image";
 
 export const HomeRulesSection = () => {
   return (

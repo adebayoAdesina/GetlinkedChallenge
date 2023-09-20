@@ -2,8 +2,11 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 
 import styled from "styled-components";
-import { ArrowIcon, BigIdealImage } from "../utils/image";
-import { TitleSectionStyle, SubTitleSectionStyle } from "../GlobalStyles/GlobalStyles";
+import { ArrowIcon, BigIdealImage } from "../../utils/image";
+import {
+  TitleSectionStyle,
+  SubTitleSectionStyle
+} from '../../GlobalStyles/GlobalStyles';
 
 export const HomeIntroductionSection = () => {
   return (
