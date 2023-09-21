@@ -3,8 +3,15 @@
   font-weight: bold;
   src: local(''), url(./fonts/ClashDisplay-Bold.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'MADE TOMMY Outline';
   font-weight: normal;
   src: local(''), url(./fonts/made-tommy-outline.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Typo Hoop Demo';
+  font-weight: normal;
+  src: local(''), url(./fonts/Typo_Hoop_Regular_Demo.otf) format('opentype');
 }

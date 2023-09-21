@@ -6,6 +6,11 @@ import { HomeIntroductionSection } from "../Components/HomePage/HomeIntroductcon
 import { HomeRulesSection } from "../Components/HomePage/HomeRulesSection";
 import { HomeJudgingCriteriaSection } from "../Components/HomePage/HomeJudgingCriteriaSection";
 import { HomeFrequentlySection } from "../Components/HomePage/HomeFrequentlySection";
+import { HomeTimelineSection } from "../Components/HomePage/HomeTimelineSection";
+import { HomePrizeAndRewardSection } from "../Components/HomePage/HomePrizeAndRewardSection";
+import { HomePartnerPageSection } from "../Components/HomePage/HomePartnerPageSection";
+import { HomePrivacyPolicySection } from "../Components/HomePage/HomePrivacyPolicySection";
+import { FooterSection } from "../Components/FooterSection";
 
 export const LandingPage = () => {
   return (
@@ -23,6 +28,12 @@ export const LandingPage = () => {
       <HomeJudgingCriteriaSection/>
       <hr/>
       <HomeFrequentlySection/>
+      <hr/>
+      <HomeTimelineSection/>
+      <HomePrizeAndRewardSection/>
+      <HomePartnerPageSection/>
+      <HomePrivacyPolicySection/>
+      <FooterSection/>
     </div>
   );
 };
