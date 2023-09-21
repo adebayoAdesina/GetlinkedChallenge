@@ -9,11 +9,18 @@ export const Stepper = () => {
       <div className="stepper d-flex flex-column mt-5">
         <div className="d-block mb-1">
           <Row>
+            <div className="col py-5"></div>
+            <div className="col-2 d-flex flex-column align-items-center">
+              <LineStyle className="h-100" />
+            </div>
+            <div className="col"></div>
+          </Row>
+          <Row>
             <div className="col">
               <StepperTitle varient={"right"}>
                 Hackathon Announcement
               </StepperTitle>
-              <StepperSubTitle varient={"right"}>
+              <StepperSubTitle varient={"right"} className="mt-2 mb-5">
                 The getlinked tech hackathon 1.0 is formally announced to the
                 general public and teams begin to get ready to register
               </StepperSubTitle>
@@ -22,7 +29,7 @@ export const Stepper = () => {
               <div className="rounded-circle py-2 px-3 bg-primary text-white mb-1">
                 1
               </div>
-              <LineStyle className="h-100"></LineStyle>
+              <LineStyle className="h-100" />
             </div>
             <div className="col">
               <OnlyStepperTitle varient={"left"}>
@@ -38,15 +45,15 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                1
+                2
               </div>
-              <div class="line h-100"></div>
+              <LineStyle className="h-100" />
             </div>
             <div className="col">
               <StepperTitle varient={"left"}>
                 Hackathon Announcement
               </StepperTitle>
-              <StepperSubTitle varient={"left"}>
+              <StepperSubTitle varient={"left"} className="mt-2 mb-5">
                 The getlinked tech hackathon 1.0 is formally announced to the
                 general public and teams begin to get ready to register
               </StepperSubTitle>
@@ -58,15 +65,15 @@ export const Stepper = () => {
               <StepperTitle varient={"right"}>
                 Teams Registration ends
               </StepperTitle>
-              <StepperSubTitle varient={"right"}>
+              <StepperSubTitle varient={"right"} className="mt-2 mb-5">
                 Interested Participants are no longer Allowed to register{" "}
               </StepperSubTitle>
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                1
+                3
               </div>
-              <div class="line h-100"></div>
+              <LineStyle className="h-100" />
             </div>
             <div className="col">
               <OnlyStepperTitle varient={"left"}>
@@ -82,15 +89,15 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                1
+                4
               </div>
-              <div class="line h-100"></div>
+              <LineStyle className="h-100" />
             </div>
             <div className="col">
               <StepperTitle varient={"left"}>
                 Announcement of the accepted teams and ideas
               </StepperTitle>
-              <StepperSubTitle varient={"left"}>
+              <StepperSubTitle varient={"left"} className="mt-2 mb-5">
                 All teams whom idea has been accepted into getlinked tech
                 hackathon 1.0 2023 are formally announced{" "}
               </StepperSubTitle>
@@ -102,16 +109,16 @@ export const Stepper = () => {
               <StepperTitle varient={"right"}>
                 Getlinked Hackathon 1.0 Offically Begins
               </StepperTitle>
-              <StepperSubTitle varient={"right"}>
+              <StepperSubTitle varient={"right"} className="mt-2 mb-5">
                 Accepted teams can now proceed to build their ground breaking
                 skill driven solutions{" "}
               </StepperSubTitle>
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                1
+                5
               </div>
-              <div class="line h-100"></div>
+              <LineStyle className="h-100" />
             </div>
             <div className="col">
               <OnlyStepperTitle varient={"left"}>
@@ -127,13 +134,13 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                1
+                6
               </div>
               <div class="line h-100"></div>
             </div>
             <div className="col">
               <StepperTitle varient={"left"}>Demo Day </StepperTitle>
-              <StepperSubTitle varient={"left"}>
+              <StepperSubTitle varient={"left"} className="mt-2 mb-5">
                 Teams get the opportunity to pitch their projects to judges. The
                 winner of the hackathon will also be announced on this day{" "}
               </StepperSubTitle>
@@ -149,7 +156,11 @@ const CenterStepperStyle = styled.section`
   align-items: center;
   align-content: center;
   align-self: center;
-  background-color: #150E28;
+  background-color: #150e28;
+  .bg-primary {
+    border-radius: 26.5px;
+    background: linear-gradient(270deg, #903aff 0%, #d434fe 100%) !important;
+  }
 `;
 
 const StepperTitle = styled.div`
@@ -181,8 +192,6 @@ const OnlyStepperTitle = styled.div`
 `;
 
 const LineStyle = styled.div`
-
-    width: 2px;
-    background-color: lightgrey !important;
-  
-`
+  width: 2px;
+  background-color: #d434fe !important;
+`;
