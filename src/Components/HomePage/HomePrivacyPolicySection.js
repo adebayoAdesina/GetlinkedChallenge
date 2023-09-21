@@ -96,8 +96,8 @@ export const HomePrivacyPolicySection = () => {
 };
 
 const HomePrivacyPolicyStyle = styled.div`
-margin-top: 10%;
-margin-bottom: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
 `;
 const LastUpdatedStyle = styled.div`
   color: rgba(255, 255, 255, 0.75);
@@ -152,13 +152,14 @@ const ReadMoreButtonStyle = styled.button`
 `;
 
 const PrivacyRightSideStyle = styled.div`
-display: block;
-text-align: center;
-position: relative;
-height: 20px;
+  display: block;
+  text-align: center;
+  position: relative;
+  height: 20px;
 `;
 const LockImageStyle = styled.img`
-  width: 180%;
+  width: 60rem;
   position: absolute;
-  transform: translate(-65%, 10%);
+  
+  transform: translate(-75%, 10%);
 `;

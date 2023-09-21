@@ -132,6 +132,7 @@ const RightSectionStyled = styled.div`
       background-blend-mode: luminosity;
     }
     #starImage {
+      width: 90%;
       position: absolute;
       background-blend-mode: hard-light;
       transform: translate(10%,0);

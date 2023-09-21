@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
+import { FollowTextStyle } from "../GlobalStyles/GlobalStyles";
 
 export const FooterSection = () => {
   return (
@@ -152,6 +153,7 @@ export const FooterSection = () => {
           </FooterBottomTextSTyle>
         </Row>
       </Container>
+     
     </FooterSectionStyle>
   );
 };
@@ -213,18 +215,7 @@ const FooterSubTitleStyle = styled.div`
   line-height: 172.4%; /* 20.688px */
 `;
 
-const FollowTextStyle = styled.div`
-  color: #d434fe;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding: 0;
-  svg {
-    margin-left: 2%;
-  }
-`;
+
 
 const FooterBottomTextSTyle = styled.div`
   color: #fff;

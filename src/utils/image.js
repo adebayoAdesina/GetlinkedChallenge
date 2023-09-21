@@ -15,7 +15,12 @@ import LibertyCompanyOne from "../images/liberty_company.png";
 import LibertyCompanyTwo from "../images/liberty.png";
 import WinWise from "../images/winwase.png";
 import WisperLogo from "../images/wisper_logo.png";
-import LockImage from "../images/lock_image.png"
+import LockImage from "../images/lock_image.png";
+import RegisterPageImage from "../images/register_page_image.png";
+import MaleWalking from "../images/male_walking.png";
+import FemaleWalking from "../images/lady_walking.png";
+import SuccessImage from "../images/success_image.png";
+import SuccessfullMan from "../images/succesful_man.png";
 
 export {
   BigIdealImage,
@@ -36,4 +41,9 @@ export {
   WinWise,
   WisperLogo,
   LockImage,
+  RegisterPageImage,
+  MaleWalking,
+  FemaleWalking,
+  SuccessImage,
+  SuccessfullMan,
 };

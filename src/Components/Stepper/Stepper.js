@@ -22,7 +22,7 @@ export const Stepper = () => {
               <div className="rounded-circle py-2 px-3 bg-primary text-white mb-1">
                 1
               </div>
-              <div className="line h-100"></div>
+              <LineStyle className="h-100"></LineStyle>
             </div>
             <div className="col">
               <OnlyStepperTitle varient={"left"}>
@@ -179,3 +179,10 @@ const OnlyStepperTitle = styled.div`
   font-weight: 700;
   line-height: normal;
 `;
+
+const LineStyle = styled.div`
+
+    width: 2px;
+    background-color: lightgrey !important;
+  
+`

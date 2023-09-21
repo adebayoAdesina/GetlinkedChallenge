@@ -1,17 +1,52 @@
 @font-face {
-  font-family: 'Clash Display';
+  font-family: "Clash Display";
+  font-style: normal;
   font-weight: bold;
-  src: local(''), url(./fonts/ClashDisplay-Bold.ttf) format('opentype');
+  src: url(./fonts/ClashDisplay-Bold.ttf) format("opentype");
+}
+@font-face {
+  font-family: "Clash Display";
+  font-style: normal;
+  font-weight: 700;
+  src: url(./fonts/ClashDisplay-Semibold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Clash Display";
+  font-style: normal;
+  font-weight: 600;
+  src: url(./fonts/ClashDisplay-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "Clash Display";
+  font-style: normal;
+  font-weight: 600;
+  src: url(./fonts/ClashDisplay-Regular.otf) format("opentype");
 }
 
 @font-face {
-  font-family: 'MADE TOMMY Outline';
+  font-family: "MADE TOMMY Outline";
   font-weight: normal;
-  src: local(''), url(./fonts/made-tommy-outline.otf) format('opentype');
+  src: local(""), url(./fonts/made-tommy-outline.otf) format("opentype");
 }
 
 @font-face {
-  font-family: 'Typo Hoop Demo';
+  font-family: "Typo Hoop Demo";
   font-weight: normal;
-  src: local(''), url(./fonts/Typo_Hoop_Regular_Demo.otf) format('opentype');
+  src: local(""), url(./fonts/Typo_Hoop_Regular_Demo.otf) format("opentype");
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+:-webkit-scrollbar-thumb {
+  background: #d434fe;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #d434fe;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
 }

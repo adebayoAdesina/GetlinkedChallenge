@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-
 import styled from "styled-components";
 import { ArrowIcon, BigIdealImage } from "../../utils/image";
 import {
@@ -97,5 +96,6 @@ const RightSectionStyle = styled.div`
   padding-left: 5%;
   padding-top: 10%;
 `;
+
 
 
