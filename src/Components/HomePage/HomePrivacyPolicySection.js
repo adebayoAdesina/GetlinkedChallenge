@@ -146,7 +146,7 @@ const ReadMoreButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
-
+color: white;
   width: 172px;
   height: 53px;
 `;

@@ -52,7 +52,7 @@ export const HomeIntroductionSection = () => {
 
 const HomeIntroductionStyle = styled.div`
   padding-top: 8%;
-  padding-bottom: 8%;
+  padding-bottom: 10%;
   
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
   background: #140d27;

@@ -23,7 +23,7 @@ export const HomeFrequentlySection = () => {
   ];
   return (
     <HomeFrequentlyStyle>
-      <Container>
+      <Container className="py-5">
         <Row>
           <LeftSectionStyle className="col-6">
             <TitleSectionStyle>

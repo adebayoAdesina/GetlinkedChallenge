@@ -15,7 +15,7 @@ export const FooterSection = () => {
               </GetLinkedStyle>
             </Row>
             <Row>
-              <GetLinkedFooterSubStyle>
+              <GetLinkedFooterSubStyle className="my-2">
                 Getlinked Tech Hackathon is a technology innovation program
                 established by a group of organizations with the aim of
                 showcasing young and talented individuals in the field of

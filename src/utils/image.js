@@ -21,6 +21,7 @@ import MaleWalking from "../images/male_walking.png";
 import FemaleWalking from "../images/lady_walking.png";
 import SuccessImage from "../images/success_image.png";
 import SuccessfullMan from "../images/succesful_man.png";
+import BlurImage from '../images/blur_color.png'
 
 export {
   BigIdealImage,
@@ -46,4 +47,5 @@ export {
   FemaleWalking,
   SuccessImage,
   SuccessfullMan,
+  BlurImage,
 };

@@ -70,10 +70,22 @@ const ReadMoreButtonStyle = styled.button`
     #fe34b9 100%
   );
   border-radius: 5px;
-border: 1px solid #D434FE;
-color: white;
+  border: 1px solid #d434fe;
+  color: white;
   width: 172px;
   height: 53px;
+`;
+
+const Blur = styled.div`
+  z-index: 0 !important;
+  width: 40%;
+  height: 240px;
+  filter: blur(100px);
+  background-color: #903AFF;
+  top: 18%;
+  background-blend-mode: hard-light;
+  position: absolute;
+  transform: translate(50%, -100px);
 `;
 export {
   TitleSectionStyle,
@@ -82,5 +94,6 @@ export {
   FollowTextStyle,
   ContactTopColoredText,
   ContactBoxStyle,
-  ReadMoreButtonStyle
+  ReadMoreButtonStyle,
+  Blur,
 };
