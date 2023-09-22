@@ -25,6 +25,13 @@ import BlurImage from '../images/blur_color.png'
 import CloseCircle from '../images/close_circle.svg'
 import CloseImage from '../images/close.svg'
 import HamburgerImage from '../images/Vector.svg'
+import libertySVG from '../images/liberty.svg'
+import libertyPaySVG from '../images/libertypay.svg'
+import winWiseSVG from '../images/winwise.svg'
+import wisperSVG from '../images/wisper.svg'
+import payboxSVG from '../images/paybox.svg'
+import visualPlusSVg from '../images/vizual-plus.svg'
+
 
 export {
   BigIdealImage,
@@ -54,4 +61,10 @@ export {
   CloseCircle,
   CloseImage,
   HamburgerImage,
+  payboxSVG,
+  wisperSVG,
+  winWiseSVG,
+  libertyPaySVG,
+  libertySVG,
+  visualPlusSVg
 };

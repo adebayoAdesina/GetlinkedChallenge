@@ -6,9 +6,17 @@ import {
   LibertyCompanyTwo,
   WinWise,
   WisperLogo,
+  libertyPaySVG,
+  libertySVG,
+  payboxSVG,
+  visualPlusSVg,
+  winWiseSVG,
+  wisperSVG,
 } from "../../utils/image";
+import useWindowDimensions from "../../utils/GetWindowDimensions";
 
 export const HomePartnerPageSection = () => {
+  const { width } = useWindowDimensions();
   return (
     <HomePartnerPageStyle>
       <Container>
@@ -24,56 +32,59 @@ export const HomePartnerPageSection = () => {
         </Row>
         <PartnerImagesStyle className="my-5">
           <Row className="heightSpacing"></Row>
+
           <Row>
-            <div className="col-2"></div>
             <div className="col">
               <Row className="partnerSpacing">
-                <LibertyOneLogImage src={LibertyCompanyOne} />
+                <div className="text-center">
+                  <LibertyOneLogImage src={libertySVG} />
+                </div>
               </Row>
               <Row>
-                <VerticalLine />
+                <div className="verticalLineCenter">
+                  <VerticalLine />
+                </div>
               </Row>
               <Row className="partnerSpacing">
-                <LibertyFourLogImage src={WisperLogo} />
+                <div className="text-center">
+                  <LibertyFourLogImage src={wisperSVG} />
+                </div>
               </Row>
             </div>
             <div className="col px-5">
               <Row>
-                <HorizontalLineStyle />
-                <div className="partnerSpacing col">
-                  <LibertyTwoLogImage src={LibertyCompanyTwo}  className=""/>
+                <HorizontalLineStyle className="" />
+                <div className="partnerSpacing col text-center pt-4">
+                  <img src={libertyPaySVG} className="libImage" />
                 </div>
                 <HorizontalLineStyle />
               </Row>
               <Row>
                 <VerticalLine />
               </Row>
-              <Row className="mt-4">
+              <Row className="mt-4 pt-2">
                 <HorizontalLineStyle />
-                <div className="partnerSpacing col">
-                  <PayBoxStyle>
-                    Pay
-                    <div>box</div>
-                  </PayBoxStyle>
+                <div className="partnerSpacing col text-center mt-3">
+                  <img src={payboxSVG} className="payboxImage" />
                 </div>
                 <HorizontalLineStyle />
               </Row>
             </div>
             <div className="col">
               <Row className="partnerSpacing">
-                <LibertyThreeLogImage src={WinWise} />
+                <div className=" text-center">
+                  <LibertyThreeLogImage src={winWiseSVG} />
+                </div>
               </Row>
               <Row>
                 <VerticalLine />
               </Row>
               <Row className="partnerSpacing">
-                <VitualPlusStyle>
-                  Vuzual
-                  <div>&nbsp;Plus</div>
-                </VitualPlusStyle>
+                <div className=" text-center">
+                  <img src={visualPlusSVg} className="plusImage" />
+                </div>
               </Row>
             </div>
-            <div className="col-2"></div>
           </Row>
         </PartnerImagesStyle>
       </Container>
@@ -83,14 +94,29 @@ export const HomePartnerPageSection = () => {
 
 const HomePartnerPageStyle = styled.div`
   .partnerSpacing {
-    height: 150px;
-    /* align-items: center;
-    text-align: center;
-    align-self: center; */
+    height: 10rem;
     align-content: space-around;
   }
   .heightSpacing {
-    height: 120px;
+    height: 20%;
+  }
+  .verticalLineCenter {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: space-around !important;
+  }
+  .payboxImage,
+  .libImage,
+  .plusImage {
+    width: 50%;
+  }
+  @media only screen and (max-width: 899px) {
+    .payboxImage,
+    .libImage,
+    .plusImage {
+      width: 100%;
+    }
   }
 `;
 const TimelineSectionStyled = styled.div`
@@ -98,31 +124,43 @@ const TimelineSectionStyled = styled.div`
 `;
 
 const PartnerImagesStyle = styled.div`
-  height: 560px;
+  padding: 7% 5% 4% 5%;
   border-radius: 5px;
   border: 1px solid #d434fe;
   background: rgba(255, 255, 255, 0.01);
 `;
 
 const LibertyOneLogImage = styled.img`
-  width: 120.562px;
-  height: 113.946px;
+  /* width: 120.562px;
+  height: 113.946px; */
+  width: 30%;
+  @media only screen and (max-width: 899px) {
+    width: 100%;
+  }
 `;
 const LibertyTwoLogImage = styled.img`
-  width: 213.189px;
-  height: 40.432px;
+  width: 60%;
+  @media only screen and (max-width: 899px) {
+    width: 60%;
+  }
 `;
 const LibertyThreeLogImage = styled.img`
-  width: 131.589px;
-  height: 107.33px;
+  width: 30%;
+  @media only screen and (max-width: 899px) {
+    width: 60%;
+  }
 `;
 const LibertyFourLogImage = styled.img`
-  width: 147.027px;
-  height: 109.535px;
+  width: 30%;
+  @media only screen and (max-width: 899px) {
+    width: 70%;
+  }
 `;
 const VerticalLine = styled.div`
-  width: 257.298px;
+  width: 70%;
   height: 4px;
+  margin-left: auto;
+  margin-right: auto;
   color: #d434fe;
   background-color: #d434fe;
 `;
@@ -165,8 +203,13 @@ const VitualPlusStyle = styled.div`
 
 const HorizontalLineStyle = styled.div`
   width: 4px !important;
-  height: 112.476px !important;
+  height: 112.476px;
   padding: 0;
   color: #d434fe;
   background-color: #d434fe;
+  margin-left: auto;
+  margin-right: auto;
+  @media only screen and (max-width: 899px) {
+    height: 90px;
+  }
 `;

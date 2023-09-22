@@ -18,8 +18,8 @@ export const HomePrivacyPolicySection = () => {
   return (
     <HomePrivacyPolicyStyle>
       <Container>
-        <Row>
-          <div className="col-6 mt-5 pt-5">
+        <Row className="PolicySection">
+          <div className="col-6 mt-5 pt-5 leftPolicySection">
             <TitleSectionStyle>
               <h3 className="pt-1">Privacy Policy and</h3>
               <h3 className="pt-3">Terms</h3>
@@ -58,7 +58,7 @@ export const HomePrivacyPolicySection = () => {
               </Row>
             </LicensingPolicySectionStyle>
           </div>
-          <div className="col-6">
+          <div className="col-6 rightPolicySection">
             <PrivacyRightSideStyle>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -98,6 +98,21 @@ export const HomePrivacyPolicySection = () => {
 const HomePrivacyPolicyStyle = styled.div`
   margin-top: 10%;
   margin-bottom: 10%;
+  @media only screen and (max-width: 1200px) {
+    .PolicySection {
+      display: inline-block !important;
+      margin-bottom: 80%;
+ 
+    }
+    .leftPolicySection {
+      width: 100% !important;
+     padding-right: 15%;
+    }
+    .rightPolicySection {
+      width: 100% !important;
+     transform: scale(0.6);
+    }
+  }
 `;
 const LastUpdatedStyle = styled.div`
   color: rgba(255, 255, 255, 0.75);
@@ -106,12 +121,16 @@ const LastUpdatedStyle = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 27.5px; /* 196.429% */
+  @media only screen and (max-width: 1200px) {
+    text-align: center;
+  }
 `;
 
 const LicensingPolicySectionStyle = styled.div`
   border-radius: 5px;
   border: 1px solid #d434fe;
   background: rgba(217, 217, 217, 0.03);
+
   div:nth-child(1) {
     color: #fff;
     font-family: Montserrat;
@@ -136,6 +155,9 @@ const LicensingPolicySectionStyle = styled.div`
     font-weight: 700;
     line-height: 216.4%; /* 30.296px */
   }
+  @media only screen and (max-width: 1200px) {
+    text-align: center;
+  }
 `;
 
 const ReadMoreButtonStyle = styled.button`
@@ -146,7 +168,7 @@ const ReadMoreButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
-color: white;
+  color: white;
   width: 172px;
   height: 53px;
 `;
@@ -160,6 +182,6 @@ const PrivacyRightSideStyle = styled.div`
 const LockImageStyle = styled.img`
   width: 60rem;
   position: absolute;
-  
+
   transform: translate(-75%, 10%);
 `;
