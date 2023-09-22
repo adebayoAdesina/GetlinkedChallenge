@@ -2,12 +2,14 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { FollowTextStyle } from "../GlobalStyles/GlobalStyles";
+import useWindowDimensions from "../utils/GetWindowDimensions";
 
 export const FooterSection = () => {
+  const { width } = useWindowDimensions();
   return (
     <FooterSectionStyle>
       <Container>
-        <Row>
+        <Row className="footerRow">
           <div className="col-6 p-0">
             <Row>
               <GetLinkedStyle>
@@ -19,9 +21,17 @@ export const FooterSection = () => {
                 Getlinked Tech Hackathon is a technology innovation program
                 established by a group of organizations with the aim of
                 showcasing young and talented individuals in the field of
-                technology
+                technology.
               </GetLinkedFooterSubStyle>
             </Row>
+            {width <= 1200 ? (
+              <div className="terms">
+                Terms of Use &nbsp;&nbsp; <div className="line"></div> &nbsp;
+                &nbsp; Privacy Policy
+              </div>
+            ) : (
+              ""
+            )}
           </div>
           <div className="col-3">
             <Row>
@@ -141,19 +151,22 @@ export const FooterSection = () => {
             </Row>
           </div>
         </Row>
-        <Row>
-          <div className="terms p-0">
-            Terms of Use &nbsp;&nbsp; <div className="line"></div> &nbsp; &nbsp;
-            Privacy Policy
-          </div>
-        </Row>
+        {width > 1200 ? (
+          <Row>
+            <div className="terms p-0">
+              Terms of Use &nbsp;&nbsp; <div className="line"></div> &nbsp;
+              &nbsp; Privacy Policy
+            </div>
+          </Row>
+        ) : (
+          ""
+        )}
         <Row>
           <FooterBottomTextSTyle className="text-center mt-5">
             All rights reserved. © getlinked Ltd.
           </FooterBottomTextSTyle>
         </Row>
       </Container>
-     
     </FooterSectionStyle>
   );
 };
@@ -167,9 +180,25 @@ const FooterSectionStyle = styled.div`
   }
   .line {
     margin: 5px !important;
-    width: 2px;
+    width: 2px !important;
     height: 17px;
     background: #d434fe;
+  }
+  @media only screen and (max-width: 1200px) {
+    .footerRow {
+      div:nth-child(1) {
+        width: 100%;
+        margin-bottom: 1%;
+      }
+      div:nth-child(2) {
+        width: 100%;
+        margin-top: 3%;
+      }
+      div:nth-child(3) {
+        width: 100%;
+        margin-top: 3%;
+      }
+    }
   }
 `;
 
@@ -214,8 +243,6 @@ const FooterSubTitleStyle = styled.div`
   font-weight: 400;
   line-height: 172.4%; /* 20.688px */
 `;
-
-
 
 const FooterBottomTextSTyle = styled.div`
   color: #fff;
