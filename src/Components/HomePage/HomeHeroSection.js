@@ -26,22 +26,22 @@ export const HomeHeroSection = () => {
         <Blur />
         <div>
           <GetLinkedStyled>getlinked Tech</GetLinkedStyled>
-          <Row>
-            <HackathonStyled>
-              Hackathon{" "}
-              <div>
-                &nbsp; 1.0 <img src={ChainImageURL} alt="chain" />
-                <img src={BoomImageURL} alt="boom" />
-              </div>
-            </HackathonStyled>
-          </Row>
+
+          <HackathonStyled>
+            Hackathon{" "}
+            <div>
+              &nbsp; 1.0 <img src={ChainImageURL} alt="chain" />
+              <img src={BoomImageURL} alt="boom" />
+            </div>
+          </HackathonStyled>
+
           <Row className="pt-3">
             <ParticipationStyle>
               Participate in getlinked tech Hackathon 2023 stand
               <br />a chance to win a Big prize
             </ParticipationStyle>
           </Row>
-          <Row className="pt-5">
+          <Row className="pt-5 centerReg">
             <RegisterButtonStyle>Register</RegisterButtonStyle>
           </Row>
           <StarImageStyle
@@ -52,7 +52,7 @@ export const HomeHeroSection = () => {
               opacity: "0.6",
             }}
           />
-          <Row>
+          <Row className="centerReg">
             <HeroTimeSectionStyle>
               <h3>00</h3>
               <h6>h</h6>
@@ -91,8 +91,15 @@ export const HomeHeroSection = () => {
 
 const HomeHeroSectionStyled = styled.div`
   display: flex;
-  position: relative !important;
+  position: relative;
   padding-top: 3%;
+  @media only screen and (max-width: 1200px) {
+    display: block;
+    .centerReg {
+      justify-content: center !important;
+      text-align: center !important;
+    }
+  }
 `;
 const LeftHeroSection = styled.div`
   padding-left: 8%;
@@ -100,10 +107,13 @@ const LeftHeroSection = styled.div`
   position: relative;
   z-index: 1;
   transform: translateY(-20%);
-  /* padding-bottom: calc(5%); */
   padding-bottom: calc(4vh - 10%);
   div {
     position: relative;
+  }
+  @media only screen and (max-width: 1200px) {
+    padding-left: 4%;
+    padding-top: 0%;
   }
 `;
 const GetLinkedStyled = styled.div`
@@ -112,6 +122,10 @@ const GetLinkedStyled = styled.div`
   font-style: normal;
   font-weight: bold;
   line-height: normal;
+  @media only screen and (max-width: 1200px) {
+    font-size: 3rem;
+    text-align: center;
+  }
 `;
 const HackathonStyled = styled.div`
   color: #fff;
@@ -133,6 +147,19 @@ const HackathonStyled = styled.div`
       height: 86px;
     }
   }
+  @media only screen and (max-width: 1200px) {
+    font-size: 3rem;
+    text-align: center;
+    justify-content: center;
+    div {
+      font-size: 3rem;
+      transform: translateY(-3%);
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
 `;
 
 const ParticipationStyle = styled.div`
@@ -141,13 +168,18 @@ const ParticipationStyle = styled.div`
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 166%; /* 33.2px */
+  line-height: 166%;
+  @media only screen and (max-width: 1200px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 const RegisterButtonStyle = styled.button`
   width: 172px;
   height: 53px;
   flex-shrink: 0;
   border-radius: 4px;
+  color: white;
   background: linear-gradient(
     270deg,
     #903aff 0%,
@@ -155,10 +187,14 @@ const RegisterButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
+  @media only screen and (max-width: 1200px) {
+    justify-content: center !important;
+    text-align: center !important;
+  }
 `;
 
 const RightSectionStyled = styled.div`
-  position: absolute !important;
+  position: absolute;
   transform: translate(65%, -8%);
   width: 60%;
   div {
@@ -173,6 +209,21 @@ const RightSectionStyled = styled.div`
     }
     #starImage {
       width: 80%;
+      position: absolute;
+      background-blend-mode: hard-light;
+      transform: translate(10%, 0);
+      opacity: 8;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    position: relative;
+    transform: translateY(-20%);
+    #personImage {
+      width: 150% !important;
+      background-blend-mode: luminosity;
+    }
+    #starImage {
+      width: 100% !important;
       position: absolute;
       background-blend-mode: hard-light;
       transform: translate(10%, 0);
@@ -199,5 +250,13 @@ const HeroTimeSectionStyle = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 133%;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 2rem;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 `;

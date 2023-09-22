@@ -16,27 +16,28 @@ import { NavBar } from "../Components/NavBar";
 export const LandingPage = () => {
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <Row>
-        <TopRowText className="mt-4">Igniting a Revolution in HR Innovation</TopRowText>
-      </Row>
-      <Row>
-        <TopRowText>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="255"
-            height="17"
-            viewBox="0 0 255 17"
-            fill="none"
-          >
-            <path
-              d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
-              stroke="#FF26B9"
-              stroke-width="5"
-            />
-          </svg>
+        <TopRowText varient="center" className="mt-4">
+          Igniting a Revolution in HR Innovation{" "}
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="255"
+              height="17"
+              viewBox="0 0 255 17"
+              fill="none"
+            >
+              <path
+                d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
+                stroke="#FF26B9"
+                stroke-width="5"
+              />
+            </svg>
+          </div>
         </TopRowText>
       </Row>
+
       <HomeHeroSection />
       <HomeIntroductionSection />
       <hr />
@@ -57,7 +58,7 @@ export const LandingPage = () => {
 const TopRowText = styled.div`
   text-align: right;
   color: #fff;
-  font-family: Montserrat;
+  font-family: "Montserrat";
   font-size: 36px;
   font-style: italic;
   font-weight: 700;
@@ -66,5 +67,15 @@ const TopRowText = styled.div`
   padding-right: 5%;
   hr {
     border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    align-items: center;
+    text-align: ${(props) => props.varient};
+    font-size: 1rem;
+    svg {
+      width: 6rem;
+      transform: translateX(100%);
+    }
   }
 `;

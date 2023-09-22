@@ -55,7 +55,7 @@ export const NavBar = () => {
                     alt="close_button"
                     onClick={closeMobileNavbar}
                   />
-                  <img src={CloseImage} alt="close" class="close" />
+                  <img src={CloseImage} alt="close" class="close" onClick={closeMobileNavbar} />
                 </div>
               </div>
               <div class="mobile-nav-links">
