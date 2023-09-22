@@ -112,6 +112,7 @@ const LeftHeroSection = styled.div`
     position: relative;
   }
   @media only screen and (max-width: 1200px) {
+    width: 100% !important;
     padding-left: 4%;
     padding-top: 0%;
   }

@@ -40,7 +40,7 @@ export const HomeFrequentlySection = () => {
               <h3 className="pt-3">Question</h3>
             </TitleSectionStyle>
             <SubTitleSectionStyle className="pt-4">
-              We got answers to the questions that you might <br /> want to ask
+              We got answers to the questions that you might want to ask
               about getlinked Hackathon 1.0
             </SubTitleSectionStyle>
             <div className="pt-5">

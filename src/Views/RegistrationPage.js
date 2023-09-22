@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import {
@@ -13,6 +13,8 @@ import {
   ReadMoreButtonStyle,
   ContactBoxStyle,
 } from "../GlobalStyles/GlobalStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { CategoriesListAction } from "../Store/Actions/CategoriesListAction";
 
 export const RegistrationPage = () => {
   // const navigation = useNavigate();
@@ -30,8 +32,20 @@ export const RegistrationPage = () => {
     setShowShadow(false)
   } 
 
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(CategoriesListAction());
+  }, [dispatch]);
+
+  const { categories} = useSelector(
+    (state) => state.categories
+  );
+
   return (
     <RegistrationPageStyle className="mt-5 pt-5">
+  
       <Container>
         <Row>
           <div className="col-6">

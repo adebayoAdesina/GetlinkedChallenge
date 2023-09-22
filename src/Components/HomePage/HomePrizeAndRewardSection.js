@@ -18,24 +18,25 @@ export const HomePrizeAndRewardSection = () => {
       <Container>
         <Row>
           <div className="col-6"></div>
-          <div className="col-6">
+          <div className="col-6 expandPrize">
             <TitleSectionStyle>
               <h3 className="pt-1">Prizes and</h3>
               <h3 className="pt-3">Rewards</h3>
             </TitleSectionStyle>
             <SubTitleSectionStyle className="pt-4">
-              Hightlight of the prizes or rewards for winners and <br />
+              Hightlight of the prizes or rewards for winners and <br></br>
               for participants.
             </SubTitleSectionStyle>
           </div>
         </Row>
-        <Row>
+        <Row className="expandPrizeSection">
           <div className="col-5">
             <PrizeImageStyle src={PrizeImage} alt="prize_image" />
           </div>
           <div className="col">
             <Row>
-              <PrizeTwoStyle className="m-3">
+              <div className="col p-0 m-0">
+              <PrizeTwoStyle className="">
                 <CardOneStyle className="text-center">
                   <PositionStyle>2nd</PositionStyle>
                   <RunnerStyle>Runner</RunnerStyle>
@@ -43,15 +44,19 @@ export const HomePrizeAndRewardSection = () => {
                 </CardOneStyle>
                 <PositionImageStyle src={SilverImage} />
               </PrizeTwoStyle>
-              <PrizeOneStyle className="m-3">
+              </div>
+              <div className="col p-0 m-0">
+              <PrizeOneStyle className="">
                 <GoldCardStyle className="text-center">
                   <PositionStyle>1st</PositionStyle>
                   <RunnerStyle>Runner</RunnerStyle>
                   <GoldPositionPrizeStyle>N400,000</GoldPositionPrizeStyle>
                 </GoldCardStyle>
-                <GoldPositionImageStyle src={GoldImage} />
+                <GoldPositionImageStyle src={GoldImage} alt="gold_image" className="goldImageOne"/>
               </PrizeOneStyle>
-              <PrizeTwoStyle className="m-3">
+              </div>
+              <div className="col p-0 m-0">
+              <PrizeTwoStyle className="">
                 <CardOneStyle className="text-center">
                   <PositionStyle>3rd</PositionStyle>
                   <RunnerStyle>Runner</RunnerStyle>
@@ -59,6 +64,10 @@ export const HomePrizeAndRewardSection = () => {
                 </CardOneStyle>
                 <PositionImageStyle src={BronzeImage} />
               </PrizeTwoStyle>
+              </div>
+              
+            
+             
             </Row>
           </div>
         </Row>
@@ -73,6 +82,18 @@ const HomePrizeAndRewardStyle = styled.div`
   background-blend-mode: color-burn;
   background-repeat: no-repeat;
   background-size: cover;
+  @media only screen and (max-width: 1200px) {
+    .expandPrize {
+      width: 100%;
+    }
+    .expandPrizeSection > div:nth-child(1) {
+      width: 100%;
+    }
+    .expandPrizeSection > div:nth-child(2) {
+      width: 100%;
+    }
+   
+  }
 `;
 
 const PrizeImageStyle = styled.img`
@@ -88,6 +109,9 @@ const CardOneStyle = styled.div`
   background: rgba(212, 52, 254, 0.12);
   margin-top: 220px;
   padding-top: 70px;
+  @media only screen and (max-width: 1200px) {
+    transform: scale(0.6);
+  }
 `;
 
 const GoldCardStyle = styled.div`
@@ -99,6 +123,9 @@ const GoldCardStyle = styled.div`
   margin-top: 180px;
   padding-top: 130px;
   transform: translate(0, 40px);
+  @media only screen and (max-width: 900px) {
+    transform: scale(0.6);
+  }
 `;
 
 const PositionStyle = styled.div`
@@ -110,7 +137,7 @@ const PositionStyle = styled.div`
 `;
 
 const RunnerStyle = styled.div`
-  font-family: Montserrat;
+  font-family: 'Montserrat';
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -119,7 +146,7 @@ const RunnerStyle = styled.div`
 
 const PositionPrizeStyle = styled.div`
   color: #d434fe;
-  font-family: Montserrat;
+  font-family: 'Montserrat';
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -140,6 +167,11 @@ const PositionImageStyle = styled.img`
   height: 180px;
   position: relative;
   transform: translate(15px, -400px);
+  @media only screen and (max-width: 1200px) {
+    width: 8rem;
+    height: 8rem;
+    transform: translate(40px, -330px);
+  }
 `;
 
 const PrizeOneStyle = styled.div`
@@ -150,6 +182,11 @@ const GoldPositionImageStyle = styled.img`
   height: 296px;
   position: relative;
   transform: translate(-40px, -470px);
+  @media only screen and (max-width: 1200px) {
+    width: 10rem;
+    height: 10rem;
+    transform: translate(30px, -370px);
+  }
 `;
 
 const PrizeTwoStyle = styled.div`

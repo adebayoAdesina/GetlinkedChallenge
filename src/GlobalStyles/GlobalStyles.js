@@ -18,6 +18,10 @@ const TitleSectionStyle = styled.div`
     font-weight: 700;
     line-height: 0%;
   }
+  @media only screen and (max-width: 1200px) {
+    text-align: center;
+    font-size: 3rem;
+  }
 `;
 
 const SubTitleSectionStyle = styled.div`
@@ -26,7 +30,12 @@ const SubTitleSectionStyle = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 27.5px;
+  @media only screen and (max-width: 1200px) {
+    text-align: center;
+    font-size: 1rem;
+  }
 `;
+
 const FloatStarRight = styled.div`
   float: right;
   text-align: right;
