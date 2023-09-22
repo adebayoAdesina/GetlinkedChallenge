@@ -49,7 +49,7 @@ export const HomeHeroSection = () => {
             alt="colored_star"
             style={{
               transform: "translate(1500%, -150%)",
-              opacity: '0.6'
+              opacity: "0.6",
             }}
           />
           <Row>
@@ -65,7 +65,6 @@ export const HomeHeroSection = () => {
         </div>
       </LeftHeroSection>
       <RightSectionStyled className="">
-        
         <Blur
           style={{
             transform: "translate(85%, 80%)",
@@ -74,12 +73,12 @@ export const HomeHeroSection = () => {
           }}
         />
         <div>
-        <StarImageStyle
+          <StarImageStyle
             src={WhiteStar}
             alt="colored_star"
             style={{
               transform: "translate(800%, 150%)",
-              opacity: '0.6'
+              opacity: "0.6",
             }}
           />
           <img src={HeroImageURL} alt="person_image" id="personImage" />
@@ -97,7 +96,7 @@ const HomeHeroSectionStyled = styled.div`
 `;
 const LeftHeroSection = styled.div`
   padding-left: 8%;
-  padding-top: 7%;
+  padding-top: 6%;
   position: relative;
   z-index: 1;
   transform: translateY(-20%);
@@ -169,11 +168,11 @@ const RightSectionStyled = styled.div`
     #personImage {
       float: right;
       flex-shrink: 0;
-      width: 95%;
+      width: 90%;
       background-blend-mode: luminosity;
     }
     #starImage {
-      width: 90%;
+      width: 80%;
       position: absolute;
       background-blend-mode: hard-light;
       transform: translate(10%, 0);

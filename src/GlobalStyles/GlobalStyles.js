@@ -80,7 +80,7 @@ const Blur = styled.div`
   z-index: 0 !important;
   width: 40%;
   height: 240px;
-  filter: blur(100px);
+  filter: blur(170px);
   background-color: #903aff;
 
   background-blend-mode: hard-light;

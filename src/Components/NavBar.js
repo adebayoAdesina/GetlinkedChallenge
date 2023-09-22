@@ -18,73 +18,61 @@ export const NavBar = () => {
     setMobileNavbarVisible(false);
   };
 
-  // const navbarToggle = document.getElementById("navbar-toggle");
-  // const mobileNavbar = document.getElementById("mobile-navbar");
-  // const closeBtn = document.querySelector(".close-btn");
-  //   navbarToggle.addEventListener(
-  //     "click",
-  //     (onOpen = () => {
-  //       if (mobileNavbar.style.display === "none") {
-  //         mobileNavbar.style.display = "block";
-  //       } else {
-  //         mobileNavbar.style.display = "none";
-  //       }
-  //     })
-  //   );
-
-  //   closeBtn.addEventListener(
-  //     "click",
-  //     (onClose = () => {
-  //       if (mobileNavbar.style.display === "block") {
-  //         mobileNavbar.style.display = "none";
-  //       } else {
-  //         mobileNavbar.style.display = "block";
-  //       }
-  //     })
-  //   );
-
   return (
     <NavBarStyle>
-      {width < 900
-        ? setMobileNavbarVisible(!mobileNavbarVisible)
-        : setMobileNavbarVisible(false)}
       <LogoStyle href="#" class="logo">
         <span class="get">
           get<span class="linked">linked</span>
         </span>
       </LogoStyle>
-      <NavLinksContainer>
-        <NavLinks>
-          <Link>Timeline</Link>
-          <Link>Overview</Link>
-          <Link>FAQs</Link>
-          <Link>Contact</Link>
-        </NavLinks>
-        <button class="nav-btn">Register</button>
-      </NavLinksContainer>
-      <img
-        src={HamburgerImage}
-        alt="hamburger"
-        class="hamburger"
-        id="navbar-toggle"
-      />
-      <div id="mobile-navbar" class="mobile-nav-links-container">
-        <div id="nav-toggle2" class="close-icon-container">
-          <div class="close-btn">
-            <img src={CloseCircle} alt="close_button" />
-            <img src={CloseImage} alt="close" class="close" />
-          </div>
-        </div>
-        <div class="mobile-nav-links">
-          <Link class="mobile-nav-links--link">Timeline</Link>
-          <Link class="mobile-nav-links--link">Overview</Link>
-          <Link class="mobile-nav-links--link">FAQs</Link>
-          <Link class="mobile-nav-links--link">Contact</Link>
-        </div>
-        <div>
-          <button class="mobile-nav-btn">Register</button>
-        </div>
-      </div>
+      {width > 1200 ? (
+        <>
+          <NavLinksContainer>
+            <NavLinks>
+              <Link>Timeline</Link>
+              <Link>Overview</Link>
+              <Link>FAQs</Link>
+              <Link>Contact</Link>
+            </NavLinks>
+            <button class="nav-btn">Register</button>
+          </NavLinksContainer>{" "}
+        </>
+      ) : (
+        <>
+          <img
+            src={HamburgerImage}
+            alt="hamburger"
+            class="hamburger"
+            id="navbar-toggle"
+            onClick={toggleMobileNavbar}
+          />
+          {mobileNavbarVisible == true ? (
+            <div id="mobile-navbar" class="mobile-nav-links-container">
+              <div id="nav-toggle2" class="close-icon-container">
+                <div class="close-btn">
+                  <img
+                    src={CloseCircle}
+                    alt="close_button"
+                    onClick={closeMobileNavbar}
+                  />
+                  <img src={CloseImage} alt="close" class="close" />
+                </div>
+              </div>
+              <div class="mobile-nav-links">
+                <Link class="mobile-nav-links--link">Timeline</Link>
+                <Link class="mobile-nav-links--link">Overview</Link>
+                <Link class="mobile-nav-links--link">FAQs</Link>
+                <Link class="mobile-nav-links--link">Contact</Link>
+              </div>
+              <div>
+                <button class="mobile-nav-btn">Register</button>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}{" "}
+        </>
+      )}
     </NavBarStyle>
   );
 };
@@ -95,7 +83,7 @@ const NavBarStyle = styled.nav`
   flex: 1;
   border-bottom: 1px solid #ffffff2e;
   align-items: center;
-  padding: 2.2rem 12.8rem 1.8%;
+  padding: 2.2% 8% 1.8%;
   position: relative;
   a {
     font-family: "Montserrat";

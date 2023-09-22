@@ -81,7 +81,9 @@
     font-weight: 500;
 }
 
-
+.mobile-navbar {
+    display: block;
+}
 .mobile-nav-btn {
     padding: 16px 52px;
     border-radius: 4px;
@@ -91,10 +93,8 @@
     margin-top: 20px;
 }
 
-@media screen and (max-width: 700px) {
-    html {
-        font-size: 6px;
-    }
+@media screen and (max-width: 1200px) {
+
 
     .navbar {
         padding: 36px 64px;
@@ -111,10 +111,7 @@
 }
 
 
-@media screen and (max-width: 550px) {
-    html {
-        font-size: 4px;
-    }
+@media screen and (max-width: 1200px) {
 
     .navbar {
         padding: 36px 48px;
