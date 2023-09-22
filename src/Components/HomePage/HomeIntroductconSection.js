@@ -1,20 +1,29 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
-import { ArrowIcon, BigIdealImage } from "../../utils/image";
+import { ArrowIcon, BigIdealImage, ColoredStar } from "../../utils/image";
 import {
   TitleSectionStyle,
-  SubTitleSectionStyle
-} from '../../GlobalStyles/GlobalStyles';
+  SubTitleSectionStyle,
+  ColoredStarStyle,
+} from "../../GlobalStyles/GlobalStyles";
 
 export const HomeIntroductionSection = () => {
   return (
     <HomeIntroductionStyle>
-        <Container>
+      <Container>
         <Row>
           <LeftSectionStyle className="col-6">
             <Row>
-              <div className="col-2"></div>
+              <div className="col-2">
+                <ColoredStarStyle
+                  src={ColoredStar}
+                  alt="color_star"
+                  style={{
+                    transform: "translate(70%, 450%)",
+                  }}
+                />
+              </div>
               <ImageTextStyle className="col">
                 <img src={BigIdealImage} alt="big_idea" />
                 <div>
@@ -31,7 +40,17 @@ export const HomeIntroductionSection = () => {
           </LeftSectionStyle>
           <RightSectionStyle className="col-6">
             <TitleSectionStyle>
-              <h3 className="pt-1">Introduction to getlinked</h3>
+              <h3 className="pt-1">
+                Introduction to getlinked{" "}
+                <ColoredStarStyle
+                  src={ColoredStar}
+                  alt="colored_star"
+                  style={{
+                    transform: "translate(1000%, 80%)",
+                
+                  }}
+                />
+              </h3>
               <h3 className="pt-3">tech Hackathon 1.0</h3>
             </TitleSectionStyle>
             <SubTitleSectionStyle className="pt-4">
@@ -45,15 +64,15 @@ export const HomeIntroductionSection = () => {
             </SubTitleSectionStyle>
           </RightSectionStyle>
         </Row>
-    </Container>
-      </HomeIntroductionStyle>
+      </Container>
+    </HomeIntroductionStyle>
   );
 };
 
 const HomeIntroductionStyle = styled.div`
   padding-top: 8%;
   padding-bottom: 10%;
-  
+
   /* border: 1px solid rgba(255, 255, 255, 0.18); */
   background: #140d27;
 `;
@@ -96,6 +115,3 @@ const RightSectionStyle = styled.div`
   padding-left: 5%;
   padding-top: 10%;
 `;
-
-
-

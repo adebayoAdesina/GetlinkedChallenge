@@ -22,6 +22,9 @@ import FemaleWalking from "../images/lady_walking.png";
 import SuccessImage from "../images/success_image.png";
 import SuccessfullMan from "../images/succesful_man.png";
 import BlurImage from '../images/blur_color.png'
+import CloseCircle from '../images/close_circle.svg'
+import CloseImage from '../images/close.svg'
+import HamburgerImage from '../images/Vector.svg'
 
 export {
   BigIdealImage,
@@ -48,4 +51,7 @@ export {
   SuccessImage,
   SuccessfullMan,
   BlurImage,
+  CloseCircle,
+  CloseImage,
+  HamburgerImage,
 };

@@ -13,10 +13,9 @@ import {
   ReadMoreButtonStyle,
   ContactBoxStyle,
 } from "../GlobalStyles/GlobalStyles";
-import { useNavigate } from "react-router-dom";
 
 export const RegistrationPage = () => {
-  const navigation = useNavigate();
+  // const navigation = useNavigate();
   const [showShadow, setShowShadow] = useState(false);
   const exitDetail = (e) => {
     // const element = e.target;

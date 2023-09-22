@@ -1,8 +1,8 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import styled from "styled-components";
-import { BlurImage, StarImage } from "../../utils/image";
-import { Blur } from "../../GlobalStyles/GlobalStyles";
+import { StarImage, WhiteStar } from "../../utils/image";
+import { Blur, StarImageStyle } from "../../GlobalStyles/GlobalStyles";
 
 export const HomeHeroSection = () => {
   const ChainImageURL =
@@ -16,6 +16,13 @@ export const HomeHeroSection = () => {
   return (
     <HomeHeroSectionStyled>
       <LeftHeroSection className="">
+        <StarImageStyle
+          src={WhiteStar}
+          alt="colored_star"
+          style={{
+            transform: "translate(250%, 300%)",
+          }}
+        />
         <Blur />
         <div>
           <GetLinkedStyled>getlinked Tech</GetLinkedStyled>
@@ -37,6 +44,14 @@ export const HomeHeroSection = () => {
           <Row className="pt-5">
             <RegisterButtonStyle>Register</RegisterButtonStyle>
           </Row>
+          <StarImageStyle
+            src={WhiteStar}
+            alt="colored_star"
+            style={{
+              transform: "translate(1500%, -150%)",
+              opacity: '0.6'
+            }}
+          />
           <Row>
             <HeroTimeSectionStyle>
               <h3>00</h3>
@@ -50,6 +65,7 @@ export const HomeHeroSection = () => {
         </div>
       </LeftHeroSection>
       <RightSectionStyled className="">
+        
         <Blur
           style={{
             transform: "translate(85%, 80%)",
@@ -58,6 +74,14 @@ export const HomeHeroSection = () => {
           }}
         />
         <div>
+        <StarImageStyle
+            src={WhiteStar}
+            alt="colored_star"
+            style={{
+              transform: "translate(800%, 150%)",
+              opacity: '0.6'
+            }}
+          />
           <img src={HeroImageURL} alt="person_image" id="personImage" />
           <img src={StarImage} alt="star" id="starImage" />
         </div>
@@ -136,7 +160,7 @@ const RegisterButtonStyle = styled.button`
 
 const RightSectionStyled = styled.div`
   position: absolute !important;
-  transform: translate(65%, 0%);
+  transform: translate(65%, -8%);
   width: 60%;
   div {
     display: flex;

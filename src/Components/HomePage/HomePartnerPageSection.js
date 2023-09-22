@@ -37,7 +37,7 @@ export const HomePartnerPageSection = () => {
                 <LibertyFourLogImage src={WisperLogo} />
               </Row>
             </div>
-            <div className="col">
+            <div className="col px-5">
               <Row>
                 <HorizontalLineStyle />
                 <div className="partnerSpacing col">
@@ -84,9 +84,9 @@ export const HomePartnerPageSection = () => {
 const HomePartnerPageStyle = styled.div`
   .partnerSpacing {
     height: 150px;
-    align-items: center;
+    /* align-items: center;
     text-align: center;
-    align-self: center;
+    align-self: center; */
     align-content: space-around;
   }
   .heightSpacing {

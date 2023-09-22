@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
 import {
   TitleSectionStyle,
-  SubTitleSectionStyle, FloatStarRight
+  SubTitleSectionStyle,
+  FloatStarRight,
+  StarImageStyle,
+  Blur,
 } from "../../GlobalStyles/GlobalStyles";
 import {
   ColoredStar,
@@ -54,7 +57,7 @@ export const HomeJudgingCriteriaSection = () => {
             <div>
               <Row>
                 <div>
-                  <StarImage src={ColoredStar} alt="colored_star" />
+                  <StarImageStyle src={ColoredStar} alt="colored_star" />
                 </div>
               </Row>
               <img
@@ -63,10 +66,24 @@ export const HomeJudgingCriteriaSection = () => {
                 id="judgingImage"
                 className="col-12"
               />
+              <Blur
+                style={{
+                  width: "8%",
+                  transform: "translate(10%,-50%)",
+                }}
+              />
+              <StarImageStyle
+                src={WhiteStar}
+                alt="colored_star"
+                style={{
+                  transform: "translate(1000%, -500%)",
+                  opacity: "0.4",
+                }}
+              />
             </div>
             <Row>
               <FloatStarRight>
-                <StarImage src={WhiteStar} alt="colored_star" />
+                <StarImageStyle src={WhiteStar} alt="colored_star" />
               </FloatStarRight>
             </Row>
           </LeftSectionStyle>
@@ -97,10 +114,7 @@ const HomeJudgingCriteriaStyle = styled.div`
   padding-bottom: 7%;
 `;
 const LeftSectionStyle = styled.div``;
-const StarImage = styled.img`
-  height: 36px !important;
-  width: 30px !important;
-`;
+
 const RightSectionStyle = styled.div`
   padding-left: 5%;
 `;
@@ -117,4 +131,3 @@ const ReadMoreButtonStyle = styled.button`
   width: 172px;
   height: 53px;
 `;
-

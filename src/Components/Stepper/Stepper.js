@@ -2,6 +2,8 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import "./style.css";
 import styled from "styled-components";
+import { StarImageStyle } from "../../GlobalStyles/GlobalStyles";
+import { ColoredStar, WhiteStar } from "../../utils/image";
 
 export const Stepper = () => {
   return (
@@ -9,7 +11,15 @@ export const Stepper = () => {
       <div className="stepper d-flex flex-column mt-5">
         <div className="d-block mb-1">
           <Row>
-            <div className="col py-5"></div>
+            <div className="col py-5">
+              <StarImageStyle
+                src={ColoredStar}
+                alt="colored_star"
+                style={{
+                  transform: "translate(0%,-80%)",
+                }}
+              />
+            </div>
             <div className="col-2 d-flex flex-column align-items-center">
               <LineStyle className="h-100" />
             </div>
@@ -27,7 +37,7 @@ export const Stepper = () => {
             </div>
             <div className="col-2 d-flex flex-column align-items-center">
               <div className="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                1
+                <strong>1</strong>
               </div>
               <LineStyle className="h-100" />
             </div>
@@ -45,7 +55,7 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                2
+                <strong>2</strong>
               </div>
               <LineStyle className="h-100" />
             </div>
@@ -71,11 +81,19 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                3
+                <strong>3</strong>
               </div>
               <LineStyle className="h-100" />
             </div>
             <div className="col">
+              <StarImageStyle
+                src={WhiteStar}
+                alt="colored_star"
+                style={{
+                  transform: "translate(0%,-80%)",
+                  float: "right",
+                }}
+              />
               <OnlyStepperTitle varient={"left"}>
                 November 18, 2023
               </OnlyStepperTitle>
@@ -89,7 +107,7 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                4
+                <strong>4</strong>
               </div>
               <LineStyle className="h-100" />
             </div>
@@ -116,11 +134,12 @@ export const Stepper = () => {
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                5
+                <strong>5</strong>
               </div>
               <LineStyle className="h-100" />
             </div>
             <div className="col">
+            
               <OnlyStepperTitle varient={"left"}>
                 November 18, 2023
               </OnlyStepperTitle>
@@ -128,13 +147,21 @@ export const Stepper = () => {
           </Row>
           <Row>
             <div className="col">
+            <StarImageStyle
+                src={WhiteStar}
+                alt="colored_star"
+                style={{
+                  transform: "translate(0%,-80%)",
+                  opacity: '0.4'
+                }}
+              />
               <OnlyStepperTitle varient={"right"}>
                 November 18, 2023
               </OnlyStepperTitle>
             </div>
             <div class="col-2 d-flex flex-column align-items-center">
               <div class="rounded-circle py-2 px-3 bg-primary text-white mb-1">
-                6
+                <strong>6</strong>
               </div>
               <div class="line h-100"></div>
             </div>

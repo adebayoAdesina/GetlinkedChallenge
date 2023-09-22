@@ -1,0 +1,142 @@
+:root {
+    --bg-color: #150E28;
+    --white: #FFF;
+    --primary-color: linear-gradient(
+        270deg,
+        #903aff 0%,
+         #d434fe 56.42%,
+        #ff26b9 99.99%,
+        #fe34b9 100%
+      );
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.nav-btn{
+    padding: 16px 52px;
+    border-radius: 4px;
+    background: var(--primary-color);
+    border-style: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+}
+
+.mobile-nav-links-container {
+    position: absolute;
+    top: 30px;
+    bottom: 0px;
+    z-index:999;
+    right: 10px;
+    background-color: var(--bg-color);
+    height: 492px;
+    width: 348px;
+    display: none;
+    flex-direction: column;
+    padding: 35px;
+    border-radius: 8px;
+    border: 0.50px rgba(255, 255, 255, 0.04) solid;
+}
+
+.close-icon-container {
+    padding: 8px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    color: #F8F8F8;
+    height: 8px;
+    width: 8px;
+}
+
+.mobile-nav-links {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-nav-links--link {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.mobile-nav-btn {
+    padding: 16px 52px;
+    border-radius: 4px;
+    background: var(--primary-color);
+    border-style: none;
+    color: var(--white);
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    html {
+        font-size: 6px;
+    }
+
+    .navbar {
+        padding: 36px 64px;
+    }
+
+    .nav-btn, .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        background: var(--bg-color);
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    html {
+        font-size: 4px;
+    }
+
+    .navbar {
+        padding: 36px 48px;
+    }
+
+    .nav-btn, .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        background: var(--bg-color);
+        display: block;
+    }
+
+    .mobile-nav-links-container {
+        display:block
+    }
+
+    .close-btn {
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

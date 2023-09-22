@@ -81,11 +81,21 @@ const Blur = styled.div`
   width: 40%;
   height: 240px;
   filter: blur(100px);
-  background-color: #903AFF;
-  top: 18%;
+  background-color: #903aff;
+
   background-blend-mode: hard-light;
   position: absolute;
   transform: translate(50%, -100px);
+`;
+
+const ColoredStarStyle = styled.img`
+  width: 21px;
+  height: 25px;
+`;
+
+const StarImageStyle = styled.img`
+  height: 36px !important;
+  width: 30px !important;
 `;
 export {
   TitleSectionStyle,
@@ -96,4 +106,6 @@ export {
   ContactBoxStyle,
   ReadMoreButtonStyle,
   Blur,
+  ColoredStarStyle,
+  StarImageStyle,
 };
