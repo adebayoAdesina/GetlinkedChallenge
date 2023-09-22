@@ -46,7 +46,7 @@ export const NavBar = () => {
             id="navbar-toggle"
             onClick={toggleMobileNavbar}
           />
-          {mobileNavbarVisible == true ? (
+          {mobileNavbarVisible === true ? (
             <div id="mobile-navbar" class="mobile-nav-links-container">
               <div id="nav-toggle2" class="close-icon-container">
                 <div class="close-btn">

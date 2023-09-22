@@ -215,9 +215,9 @@ const RightSectionStyled = styled.div`
       opacity: 8;
     }
   }
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 900px) {
     position: relative;
-    transform: translateY(-20%);
+    transform: translateY(-30%);
     #personImage {
       width: 150% !important;
       background-blend-mode: luminosity;
@@ -229,6 +229,11 @@ const RightSectionStyled = styled.div`
       transform: translate(10%, 0);
       opacity: 8;
     }
+  }
+  @media only screen and (min-width: 899px) and (max-width: 1200px) {
+    position: relative;
+    transform: translateY(-20%);
+
   }
 `;
 

@@ -96,8 +96,14 @@ export const HomeFrequentlySection = () => {
 const HomeFrequentlyStyle = styled.div``;
 const LeftSectionStyle = styled.div`
   padding-top: 10%;
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
-const RightSectionStyle = styled.div``;
+const RightSectionStyle = styled.div`
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }`;
 const QuestionTextStyle = styled.div`
   display: flex;
   transform: translate(15%, 80px);

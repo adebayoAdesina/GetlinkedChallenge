@@ -113,10 +113,18 @@ const HomeJudgingCriteriaStyle = styled.div`
   padding-top: 5%;
   padding-bottom: 7%;
 `;
-const LeftSectionStyle = styled.div``;
+const LeftSectionStyle = styled.div`
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
+`;
 
 const RightSectionStyle = styled.div`
   padding-left: 5%;
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 
 const ReadMoreButtonStyle = styled.button`
@@ -127,7 +135,7 @@ const ReadMoreButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
-
+  color: white;
   width: 172px;
   height: 53px;
 `;

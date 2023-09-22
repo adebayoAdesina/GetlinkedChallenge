@@ -13,7 +13,7 @@ export const HomeRulesSection = () => {
   return (
     <HomeRulesStyle>
       <Container>
-        <Row>
+        <Row className="reverseFlex">
           <LeftSectionStyle className="col-6">
             <Blur
               style={{
@@ -72,9 +72,26 @@ export const HomeRulesSection = () => {
   );
 };
 
-const HomeRulesStyle = styled.div``;
+const HomeRulesStyle = styled.div`
+  @media only screen and (max-width: 1200px) {
+    .reverseFlex {
+      display: flex !important;
+      flex-direction: column-reverse !important;
+    }
+  }
+`;
 const LeftSectionStyle = styled.div`
   padding-top: 10%;
   position: relative;
+  @media only screen and (max-width: 1200px) {
+    padding-top: 1%;
+    padding-bottom: 10%;
+    width: 100%;
+    text-align: center;
+  }
 `;
-const RightSectionStyle = styled.div``;
+const RightSectionStyle = styled.div`
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
+`;

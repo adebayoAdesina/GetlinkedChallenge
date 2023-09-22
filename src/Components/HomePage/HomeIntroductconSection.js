@@ -47,7 +47,6 @@ export const HomeIntroductionSection = () => {
                   alt="colored_star"
                   style={{
                     transform: "translate(1000%, 80%)",
-                
                   }}
                 />
               </h3>
@@ -77,7 +76,12 @@ const HomeIntroductionStyle = styled.div`
   background: #140d27;
 `;
 
-const LeftSectionStyle = styled.div``;
+const LeftSectionStyle = styled.div`
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+    transform: translate(-20%, -40%);
+  }
+`;
 
 const ImageTextStyle = styled.div`
   display: flex;
@@ -113,5 +117,10 @@ const ImageTextStyle = styled.div`
 
 const RightSectionStyle = styled.div`
   padding-left: 5%;
+  padding-right: 5%;
   padding-top: 10%;
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
