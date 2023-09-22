@@ -59,6 +59,11 @@ const ContactBoxStyle = styled.div`
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @media only screen and (max-width: 1200px) {
+    border: none;
+    background: transparent;
+  }
 `;
 
 const ContactTopColoredText = styled.div`

@@ -15,10 +15,21 @@ import {
 } from "../GlobalStyles/GlobalStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { CategoriesListAction } from "../Store/Actions/CategoriesListAction";
+import axios from "axios";
+import { registration_url } from "../API/api";
 
 export const RegistrationPage = () => {
   // const navigation = useNavigate();
   const [showShadow, setShowShadow] = useState(false);
+  const [registrationForm, setRegistrationForm] = useState({
+    email: "sample@eexample.com",
+    phone_number: "0903322445533",
+    team_name: "Space Explore",
+    group_size: 10,
+    project_topic: "Web server propagation",
+    category: 1,
+    privacy_poclicy_accepted: true,
+  });
   const exitDetail = (e) => {
     // const element = e.target;
     // if (element.classList.contains("shadow")) {
@@ -39,7 +50,29 @@ export const RegistrationPage = () => {
   }, [dispatch]);
 
   const { categories } = useSelector((state) => state.isCategories);
-  console.log(categories);
+
+  const url = registration_url();
+  const registerNewUser = async (e) => {
+    e.preventDefault();
+    
+    try {
+      const response = await axios.post(
+        url,
+        registrationForm,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      exitDetail();
+      // Handle the response data here
+    } catch (error) {
+      console.error("Error:", error.response.data);
+      // Handle errors here
+    }
+  };
   return (
     <RegistrationPageStyle className="mt-5 pt-5">
       <Container>
@@ -146,7 +179,7 @@ export const RegistrationPage = () => {
                 <Row>
                   <div className="text-center">
                     <ReadMoreButtonStyle
-                      onClick={exitDetail}
+                      onClick={registerNewUser}
                       className="mt-2 w-100"
                     >
                       Register Now
@@ -258,6 +291,7 @@ const RegistrationPageStyle = styled.div`
     border-radius: 4px;
     border: 1px solid #fff;
     padding: 0 8%;
+    color: #d434fe;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
   .registerOne::placeholder {
@@ -284,7 +318,6 @@ const RegistrationPageStyle = styled.div`
       color: #ffffff !important;
       background: #150e28 !important;
     }
-  
   }
 `;
 
