@@ -20,9 +20,9 @@ export const NavBar = () => {
 
   return (
     <NavBarStyle>
-      <LogoStyle href="#" class="logo">
-        <span class="get">
-          get<span class="linked">linked</span>
+      <LogoStyle href="#" className="logo">
+        <span className="get">
+          get<span className="linked">linked</span>
         </span>
       </LogoStyle>
       {width > 1200 ? (
@@ -34,7 +34,7 @@ export const NavBar = () => {
               <Link>FAQs</Link>
               <Link>Contact</Link>
             </NavLinks>
-            <button class="nav-btn">Register</button>
+            <button className="nav-btn">Register</button>
           </NavLinksContainer>{" "}
         </>
       ) : (
@@ -42,30 +42,30 @@ export const NavBar = () => {
           <img
             src={HamburgerImage}
             alt="hamburger"
-            class="hamburger"
+            className="hamburger"
             id="navbar-toggle"
             onClick={toggleMobileNavbar}
           />
           {mobileNavbarVisible === true ? (
-            <div id="mobile-navbar" class="mobile-nav-links-container">
-              <div id="nav-toggle2" class="close-icon-container">
-                <div class="close-btn">
+            <div id="mobile-navbar" className="mobile-nav-links-container">
+              <div id="nav-toggle2" className="close-icon-container">
+                <div className="close-btn">
                   <img
                     src={CloseCircle}
                     alt="close_button"
                     onClick={closeMobileNavbar}
                   />
-                  <img src={CloseImage} alt="close" class="close" onClick={closeMobileNavbar} />
+                  <img src={CloseImage} alt="close" className="close" onClick={closeMobileNavbar} />
                 </div>
               </div>
-              <div class="mobile-nav-links">
-                <Link class="mobile-nav-links--link">Timeline</Link>
-                <Link class="mobile-nav-links--link">Overview</Link>
-                <Link class="mobile-nav-links--link">FAQs</Link>
-                <Link class="mobile-nav-links--link">Contact</Link>
+              <div className="mobile-nav-links">
+                <Link className="mobile-nav-links--link">Timeline</Link>
+                <Link className="mobile-nav-links--link">Overview</Link>
+                <Link className="mobile-nav-links--link">FAQs</Link>
+                <Link className="mobile-nav-links--link">Contact</Link>
               </div>
               <div>
-                <button class="mobile-nav-btn">Register</button>
+                <button className="mobile-nav-btn">Register</button>
               </div>
             </div>
           ) : (

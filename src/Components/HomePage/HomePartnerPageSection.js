@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
 import {
-  LibertyCompanyOne,
-  LibertyCompanyTwo,
-  WinWise,
-  WisperLogo,
   libertyPaySVG,
   libertySVG,
   payboxSVG,
@@ -13,10 +9,8 @@ import {
   winWiseSVG,
   wisperSVG,
 } from "../../utils/image";
-import useWindowDimensions from "../../utils/GetWindowDimensions";
 
 export const HomePartnerPageSection = () => {
-  const { width } = useWindowDimensions();
   return (
     <HomePartnerPageStyle>
       <Container>
@@ -37,7 +31,7 @@ export const HomePartnerPageSection = () => {
             <div className="col">
               <Row className="partnerSpacing">
                 <div className="text-center">
-                  <LibertyOneLogImage src={libertySVG} />
+                  <LibertyOneLogImage src={libertySVG} alt="liberty_svg" />
                 </div>
               </Row>
               <Row>
@@ -47,7 +41,7 @@ export const HomePartnerPageSection = () => {
               </Row>
               <Row className="partnerSpacing">
                 <div className="text-center">
-                  <LibertyFourLogImage src={wisperSVG} />
+                  <LibertyFourLogImage src={wisperSVG} alt="wisper_svg" />
                 </div>
               </Row>
             </div>
@@ -55,7 +49,11 @@ export const HomePartnerPageSection = () => {
               <Row>
                 <HorizontalLineStyle className="" />
                 <div className="partnerSpacing col text-center pt-4">
-                  <img src={libertyPaySVG} className="libImage" />
+                  <img
+                    src={libertyPaySVG}
+                    className="libImage"
+                    alt="liberty_pay_svg"
+                  />
                 </div>
                 <HorizontalLineStyle />
               </Row>
@@ -65,7 +63,11 @@ export const HomePartnerPageSection = () => {
               <Row className="mt-4 pt-2">
                 <HorizontalLineStyle />
                 <div className="partnerSpacing col text-center mt-3">
-                  <img src={payboxSVG} className="payboxImage" />
+                  <img
+                    src={payboxSVG}
+                    className="payboxImage"
+                    alt="paybox_svg"
+                  />
                 </div>
                 <HorizontalLineStyle />
               </Row>
@@ -73,7 +75,7 @@ export const HomePartnerPageSection = () => {
             <div className="col">
               <Row className="partnerSpacing">
                 <div className=" text-center">
-                  <LibertyThreeLogImage src={winWiseSVG} />
+                  <LibertyThreeLogImage src={winWiseSVG} alt="winwise_svg" />
                 </div>
               </Row>
               <Row>
@@ -81,7 +83,11 @@ export const HomePartnerPageSection = () => {
               </Row>
               <Row className="partnerSpacing">
                 <div className=" text-center">
-                  <img src={visualPlusSVg} className="plusImage" />
+                  <img
+                    src={visualPlusSVg}
+                    className="plusImage"
+                    alt="visualplus_svg"
+                  />
                 </div>
               </Row>
             </div>
@@ -131,17 +137,9 @@ const PartnerImagesStyle = styled.div`
 `;
 
 const LibertyOneLogImage = styled.img`
-  /* width: 120.562px;
-  height: 113.946px; */
   width: 30%;
   @media only screen and (max-width: 899px) {
     width: 100%;
-  }
-`;
-const LibertyTwoLogImage = styled.img`
-  width: 60%;
-  @media only screen and (max-width: 899px) {
-    width: 60%;
   }
 `;
 const LibertyThreeLogImage = styled.img`
@@ -163,42 +161,6 @@ const VerticalLine = styled.div`
   margin-right: auto;
   color: #d434fe;
   background-color: #d434fe;
-`;
-
-const PayBoxStyle = styled.div`
-  color: #fff;
-  font-family: Typo Hoop Demo;
-  font-size: 51px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 27.5px;
-  display: flex;
-  div {
-    color: #00a3ff;
-    font-family: Typo Hoop Demo;
-    font-size: 51px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27.5px;
-  }
-`;
-
-const VitualPlusStyle = styled.div`
-  color: #fff;
-  font-family: Voces;
-  font-size: 41px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 27.5px;
-  display: flex;
-  div {
-    color: #f00;
-    font-family: Volkhov;
-    font-size: 41px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27.5px;
-  }
 `;
 
 const HorizontalLineStyle = styled.div`

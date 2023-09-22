@@ -185,6 +185,9 @@ const FooterSectionStyle = styled.div`
     background: #d434fe;
   }
   @media only screen and (max-width: 1200px) {
+    & {
+      padding: 5%;
+    }
     .footerRow {
       div:nth-child(1) {
         width: 100%;

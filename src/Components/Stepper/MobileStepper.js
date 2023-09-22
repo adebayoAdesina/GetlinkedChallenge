@@ -7,7 +7,7 @@ import {
   StepperTitle,
 } from "../../GlobalStyles/GlobalStyles";
 import { StarImageStyle } from "../../GlobalStyles/GlobalStyles";
-import { ColoredStar, WhiteStar } from "../../utils/image";
+import { WhiteStar } from "../../utils/image";
 import { Row } from "react-bootstrap";
 
 export const MobileStepper = () => {

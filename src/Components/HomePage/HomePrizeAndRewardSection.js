@@ -14,7 +14,7 @@ import {
 
 export const HomePrizeAndRewardSection = () => {
   return (
-    <HomePrizeAndRewardStyle className="py-5">
+    <HomePrizeAndRewardStyle className="py-5 mt-5">
       <Container>
         <Row>
           <div className="col-6"></div>
@@ -35,7 +35,7 @@ export const HomePrizeAndRewardSection = () => {
           </div>
           <div className="col">
             <Row>
-              <div className="col p-0 m-0">
+              <div className="col-4 p-0 m-0">
               <PrizeTwoStyle className="">
                 <CardOneStyle className="text-center">
                   <PositionStyle>2nd</PositionStyle>
@@ -45,7 +45,7 @@ export const HomePrizeAndRewardSection = () => {
                 <PositionImageStyle src={SilverImage} />
               </PrizeTwoStyle>
               </div>
-              <div className="col p-0 m-0">
+              <div className="col-4 p-0 m-0">
               <PrizeOneStyle className="">
                 <GoldCardStyle className="text-center">
                   <PositionStyle>1st</PositionStyle>
@@ -55,7 +55,7 @@ export const HomePrizeAndRewardSection = () => {
                 <GoldPositionImageStyle src={GoldImage} alt="gold_image" className="goldImageOne"/>
               </PrizeOneStyle>
               </div>
-              <div className="col p-0 m-0">
+              <div className="col-4 p-0 m-0">
               <PrizeTwoStyle className="">
                 <CardOneStyle className="text-center">
                   <PositionStyle>3rd</PositionStyle>

@@ -156,6 +156,8 @@ const LicensingPolicySectionStyle = styled.div`
   }
   @media only screen and (max-width: 1200px) {
     text-align: center;
+    width: 100% !important;
+    margin-left: 6%;
   }
 `;
 
