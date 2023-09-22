@@ -29,23 +29,19 @@ export const RegistrationPage = () => {
   };
 
   const backToHome = (e) => {
-    setShowShadow(false)
-  } 
+    setShowShadow(false);
+  };
 
-  
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(CategoriesListAction());
   }, [dispatch]);
 
-  const { categories} = useSelector(
-    (state) => state.categories
-  );
-
+  const { categories } = useSelector((state) => state.isCategories);
+  console.log(categories);
   return (
     <RegistrationPageStyle className="mt-5 pt-5">
-  
       <Container>
         <Row>
           <div className="col-6">
@@ -105,6 +101,36 @@ export const RegistrationPage = () => {
                     />
                   </div>
                 </Row>
+                <Row className="mt-3">
+                  <div className="col-6">
+                    <label className="my-2">Category</label>
+
+                    <select className="selectTag w-100">
+                      <option>Select your category</option>
+                      {categories.length !== 0
+                        ? categories.map((e, i) => (
+                            <option key={i.id}>{e.name}</option>
+                          ))
+                        : ""}
+                    </select>
+                  </div>
+                  <div className="col-6">
+                    <label className="my-2">Group Size</label>
+                    <select className="selectTag w-100">
+                      <option>Select</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8</option>
+                      <option>9</option>
+                      <option>10</option>
+                    </select>
+                  </div>
+                </Row>
                 <Row>
                   <PleaseReviewTextStyle className="mt-3 mb-2">
                     Please review your registration details before submitting
@@ -159,15 +185,15 @@ export const RegistrationPage = () => {
                 </CongratulationsSubTextStyle>
               </Row>
               <Row>
-                  <div className="text-center">
-                    <ReadMoreButtonStyle
-                      onClick={backToHome}
-                      className="mt-2 w-100"
-                    >
-                      Back
-                    </ReadMoreButtonStyle>
-                  </div>
-                </Row>
+                <div className="text-center">
+                  <ReadMoreButtonStyle
+                    onClick={backToHome}
+                    className="mt-2 w-100"
+                  >
+                    Back
+                  </ReadMoreButtonStyle>
+                </div>
+              </Row>
             </ShowSuccessStyle>
             <div className="col"></div>
           </Row>
@@ -194,7 +220,7 @@ const CardShadow = styled.div`
     /* background-color: #ff7676; */
   }
   &::-webkit-scrollbar-track {
-    background-color: #150E28;
+    background-color: #150e28;
   }
 `;
 
@@ -241,6 +267,24 @@ const RegistrationPageStyle = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+  }
+  .selectTag {
+    height: 47px;
+    background-color: transparent;
+    border-radius: 4px;
+    color: white;
+    border: 1px solid #fff;
+    padding: 0 8%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    & > option {
+      color: #150e28;
+      background-color: #d434fe;
+    }
+    & > option:hover {
+      color: #ffffff !important;
+      background: #150e28 !important;
+    }
+  
   }
 `;
 
