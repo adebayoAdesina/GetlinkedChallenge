@@ -102,15 +102,14 @@ const HomePrivacyPolicyStyle = styled.div`
     .PolicySection {
       display: inline-block !important;
       margin-bottom: 80%;
- 
     }
     .leftPolicySection {
       width: 100% !important;
-     padding-right: 15%;
+      padding-right: 15%;
     }
     .rightPolicySection {
       width: 100% !important;
-     transform: scale(0.6);
+      transform: scale(0.6);
     }
   }
 `;

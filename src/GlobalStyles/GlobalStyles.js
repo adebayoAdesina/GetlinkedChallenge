@@ -111,6 +111,51 @@ const StarImageStyle = styled.img`
   height: 36px !important;
   width: 30px !important;
 `;
+
+const CenterStepperStyle = styled.section`
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  background-color: #150e28;
+  .bg-primary {
+    border-radius: 26.5px;
+    background: linear-gradient(270deg, #903aff 0%, #d434fe 100%) !important;
+  }
+`;
+
+const StepperTitle = styled.div`
+  color: #d434fe;
+  text-align: ${(props) => (props.varient === "left" ? "left" : "right")};
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+const StepperSubTitle = styled.div`
+  text-align: ${(props) => (props.varient === "left" ? "left" : "right")};
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170.9%;
+`;
+
+const OnlyStepperTitle = styled.div`
+  color: #d434fe;
+  font-family: Montserrat;
+  text-align: ${(props) => (props.varient === "left" ? "left" : "right")};
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
+const LineStyle = styled.div`
+  width: 2px;
+  background-color: #d434fe !important;
+`;
+
 export {
   TitleSectionStyle,
   SubTitleSectionStyle,
@@ -122,4 +167,9 @@ export {
   Blur,
   ColoredStarStyle,
   StarImageStyle,
+  OnlyStepperTitle,
+  LineStyle,
+  StepperSubTitle,
+  StepperTitle,
+  CenterStepperStyle,
 };

@@ -2,8 +2,11 @@ import React from "react";
 import { Stepper } from "../Stepper/Stepper";
 import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
+import useWindowDimensions from "../../utils/GetWindowDimensions";
+import { MobileStepper } from "../Stepper/MobileStepper";
 
 export const HomeTimelineSection = () => {
+  const { width } = useWindowDimensions();
   return (
     <HomeTimelineStyle className="py-5">
       <Container>
@@ -11,13 +14,12 @@ export const HomeTimelineSection = () => {
           <TimelineSectionStyled>
             <h3 className="py-4">Timeline</h3>
             <h6>
-              Here is the breakdown of the time we anticipate <br/>using for the
-              upcoming event.
+              Here is the breakdown of the time we anticipate <br />
+              using for the upcoming event.
             </h6>
           </TimelineSectionStyled>
         </Row>
-        
-        <Stepper />
+        {width < 1200 ? <MobileStepper /> : <Stepper />}
       </Container>
     </HomeTimelineStyle>
   );
@@ -25,8 +27,8 @@ export const HomeTimelineSection = () => {
 
 const HomeTimelineStyle = styled.div``;
 const TimelineSectionStyled = styled.div`
-text-align: center;
-align-content: center;
+  text-align: center;
+  align-content: center;
   h3 {
     font-family: Clash Display;
     font-size: 32px;
