@@ -4,6 +4,13 @@ import { LandingPage } from "./Views/LandingPage";
 import { ContactPage } from "./Views/ContactPage";
 import { RegistrationPage } from "./Views/RegistrationPage";
 import { useEffect, useState } from "react";
+import {
+  CreativeImage,
+  ChainImageURL,
+  BoomImageURL,
+  StarImage,
+  MaleWalking,
+} from "./utils/image";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -27,6 +34,9 @@ const App = () => {
               </span>
             </div>
           </p>
+          <img src={CreativeImage} alt="creative" className="creative-image" />
+          <img src={ChainImageURL} alt="chain_img" className="chain-image" />
+          <img src={BoomImageURL} alt="boom_img" className="boom-image" />
         </div>
       ) : (
         <Routes>

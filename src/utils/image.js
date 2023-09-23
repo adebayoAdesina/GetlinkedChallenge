@@ -21,17 +21,19 @@ import MaleWalking from "../images/male_walking.png";
 import FemaleWalking from "../images/lady_walking.png";
 import SuccessImage from "../images/success_image.png";
 import SuccessfullMan from "../images/succesful_man.png";
-import BlurImage from '../images/blur_color.png'
-import CloseCircle from '../images/close_circle.svg'
-import CloseImage from '../images/close.svg'
-import HamburgerImage from '../images/Vector.svg'
-import libertySVG from '../images/liberty.svg'
-import libertyPaySVG from '../images/libertypay.svg'
-import winWiseSVG from '../images/winwise.svg'
-import wisperSVG from '../images/wisper.svg'
-import payboxSVG from '../images/paybox.svg'
-import visualPlusSVg from '../images/vizual-plus.svg'
-
+import BlurImage from "../images/blur_color.png";
+import CloseCircle from "../images/close_circle.svg";
+import CloseImage from "../images/close.svg";
+import HamburgerImage from "../images/Vector.svg";
+import libertySVG from "../images/liberty.svg";
+import libertyPaySVG from "../images/libertypay.svg";
+import winWiseSVG from "../images/winwise.svg";
+import wisperSVG from "../images/wisper.svg";
+import payboxSVG from "../images/paybox.svg";
+import visualPlusSVg from "../images/vizual-plus.svg";
+import CreativeImage from "../images/creative.png";
+import ChainImageURL from "../images/chain_image.png";
+import BoomImageURL from '../images/boom_image.png'
 
 export {
   BigIdealImage,
@@ -66,5 +68,8 @@ export {
   winWiseSVG,
   libertyPaySVG,
   libertySVG,
-  visualPlusSVg
+  visualPlusSVg,
+  CreativeImage,
+  ChainImageURL,
+  BoomImageURL
 };

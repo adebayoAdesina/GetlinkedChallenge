@@ -51,21 +51,14 @@
   background: #fff;
 }
 
-
-
-
-
-
-
-
-#html-spinner{
-  width:10rem;
+#html-spinner {
+  width: 10rem;
   height: 10rem;
   border-image: linear-gradient(90deg, #903aff 3.08%, #ff26b9 93.85%);
   border-style: solid;
-  border-top:4px solid white;
+  border-top: 4px solid white;
   border-image-width: 10px;
-  border-radius:50%;
+  border-radius: 50%;
 }
 
 #html-spinner {
@@ -74,55 +67,90 @@
   -webkit-animation-name: rotate;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-  
+
   -moz-transition-property: -moz-transform;
-  -moz-animation-name: rotate; 
-  -moz-animation-duration: 1.2s; 
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 1.2s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
-  
+
   transition-property: transform;
-  animation-name: rotate; 
-  animation-duration: 1.2s; 
+  animation-name: rotate;
+  animation-duration: 1.2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
 
 @-webkit-keyframes rotate {
-    from {-webkit-transform: rotate(0deg);}
-    to {-webkit-transform: rotate(360deg);}
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @-moz-keyframes rotate {
-    from {-moz-transform: rotate(0deg);}
-    to {-moz-transform: rotate(360deg);}
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 
 #html-spinner {
-  position:absolute;
-  top: 40vh;
-  left:46%; 
+  position: absolute;
+  top: 33vh;
+  left: 46%;
 }
 
-#html-para, #svg-para{
-  position:absolute;
-  top: 50vh;
-  left:37%; 
-  padding:5%;
-  text-align:center;
+#html-para,
+#svg-para {
+  position: absolute;
+  top: 55vh;
+  left: 36%;
+  padding: 5%;
+  text-align: center;
   font-family: "Clash Display";
   font-size: 5rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-
 }
 .linked {
   color: #d434fe;
 }
+
+.creative-image {
+  width: 63px;
+  height: 83px;
+  position: absolute;
+  left: 10rem;
+  top: 10rem;
+}
+
+.chain-image {
+  width: 83px;
+  height: 103px;
+  position: absolute;
+  bottom: 5rem;
+
+}
+.boom-image {
+  width: 83px;
+  height: 103px;
+  position: absolute;
+  right: 5rem;
+
+}
+

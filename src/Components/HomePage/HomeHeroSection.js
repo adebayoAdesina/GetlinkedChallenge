@@ -1,15 +1,11 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import styled from "styled-components";
-import { StarImage, WhiteStar } from "../../utils/image";
+import { CreativeImage, StarImage, WhiteStar, ChainImageURL,BoomImageURL } from "../../utils/image";
 import { Blur, StarImageStyle } from "../../GlobalStyles/GlobalStyles";
 import { Link } from "react-router-dom";
 
 export const HomeHeroSection = () => {
-  const ChainImageURL =
-    "https://s3-alpha-sig.figma.com/img/1971/15ec/e07a2f6b05388994672be66411f81f42?Expires=1696204800&Signature=UuvuW64j93ZUVltNLOX~es8PMxtHlWwJWARnTkR6n31bFmCOyQew8t8lgHBjSavsM0zDiKwaG4FNQQjFHQCi6qB0f8G4uxL4pbBYRjJy7zMNg1oHfdzGEIhowzBJdvb6Old5YbHRxOgpOJ2h1GDbXF4v6h6yBSt665XOnIFWjets9HHD2n7BGe56N8yO~iu4Vqhk8mUgPEF-qJIDIaYgJGy4uF-QCQ~tYignyBmLJ5QHU6Kapn7A1dPA5s6wceHqXNLfuXAWAtMBLmrTZ1ZQCImqtXmEHJPNfudjvfUdMp1V6xSHeIrqReXNXAY4YU8mp80T49oP3l1FK5joGlFY6w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
-  const BoomImageURL =
-    "https://s3-alpha-sig.figma.com/img/ad71/a4dd/666167cffb0c9bf39fca6a2d11c90feb?Expires=1696204800&Signature=B06x0hH~eDZfVMO3f6l5vh~b-4Cmm3ieK3dsajMfQOAhzPCDV0Aqb3sBSsJrQlzRhYkxv7CWT2gK9fDy0trv2y1kBcaVESQZizi5YqdvkbfwklcEF1ZI6uAbzLG6R6imDmdBefBWRJNDzCWKK1dDDxJZzRLyG3zgGuP9egPcdMm79Wxq2mxVAyH-mFZxk0eQlVmQcI9uZOUqnAVpuvJR2JbPtc3ET3bRR14uctMXv6SQKJo3k9yFO1G8LZUokRiYUSJDVYFgK~324CNaFfMP~w5zhNvhDce60bFiCnn-5wExmoNDlUofNuNJaRBLZEK~E5AZSoTjFXDs9tLlpk3xbA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
 
   const HeroImageURL =
     "https://s3-alpha-sig.figma.com/img/2cea/d700/cfbd4eb06b68c33fac2a89295904df2c?Expires=1696204800&Signature=Pl8bxQP7ZWA8IQ~PcHxowSaaCsU8KsCWsjtAdV6WbycHB9CRSS3HmiUrIoLq7x8FSDNA5qhlVqpaF9PjBCB7vHkotMawDRLRihUUfrQSiMjhzG1sXACFmEqCbgbAOnmThDsh05K5hvMNlu0aZjKfhaWi3WigTfEpzQu79zcsA-xggSvAG3k5-pvQEoXQiViO6zISNYUBUgSoT6iO4SJ7jwGKZOA1tL3MGCzbwMyaTEqn8yLde~kSrWX34kogEmUFU9ziDrla9dgaxjRFUFtuDiw2J5NKDjGqV5QjoAQwb~SsNsFDcCq3Jq76s-4WdTGa2vBih1ibhsrAHsdeW0m6xg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
@@ -26,6 +22,7 @@ export const HomeHeroSection = () => {
         />
         <Blur />
         <div>
+          <CreativeStyle src={CreativeImage} alt="creative" />
           <GetLinkedStyled>getlinked Tech</GetLinkedStyled>
 
           <HackathonStyled>
@@ -43,9 +40,9 @@ export const HomeHeroSection = () => {
             </ParticipationStyle>
           </Row>
           <Row className="pt-5 centerReg">
-           <Link to={'/register'}>
-            <RegisterButtonStyle>Register</RegisterButtonStyle>
-           </Link>
+            <Link to={"/register"}>
+              <RegisterButtonStyle>Register</RegisterButtonStyle>
+            </Link>
           </Row>
           <StarImageStyle
             src={WhiteStar}
@@ -238,7 +235,6 @@ const RightSectionStyled = styled.div`
   @media only screen and (min-width: 899px) and (max-width: 1200px) {
     position: relative;
     transform: translateY(-20%);
-
   }
 `;
 
@@ -268,5 +264,14 @@ const HeroTimeSectionStyle = styled.div`
     text-align: center !important;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
+  }
+`;
+
+const CreativeStyle = styled.img`
+  width: 53px;
+  height: 73px;
+  transform: translateX(1000%);
+  @media only screen and (max-width: 1200px) {
+    transform: translateX(700%);
   }
 `;
