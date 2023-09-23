@@ -8,8 +8,6 @@ import {
   CreativeImage,
   ChainImageURL,
   BoomImageURL,
-  StarImage,
-  MaleWalking,
 } from "./utils/image";
 
 const App = () => {

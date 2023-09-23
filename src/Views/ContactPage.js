@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import {
@@ -9,9 +9,45 @@ import {
 import useWindowDimensions from "../utils/GetWindowDimensions";
 import { ShareIcons } from "../Components/ShareIcons";
 import { NavBar } from "../Components/NavBar";
+import { useFormik } from "formik";
+import { ContactSchemas } from "../Schemas/ContactSchema";
+import axios from "axios";
+import { contact_url } from "../API/api";
 
 export const ContactPage = () => {
   const { width } = useWindowDimensions();
+  const initialValues = {
+    email: "",
+    first_name: "",
+    message: "",
+  };
+
+  const [isLoading, setisLoading] = useState(false)
+
+  const formik = useFormik({
+    initialValues: initialValues,
+    validationSchema: ContactSchemas,
+    onSubmit: (values) => {
+      sendMessage(values);
+    },
+  });
+  const sendMessage = async (data) => {
+    setisLoading(true)
+    await axios({
+      method: "post",
+      url: contact_url(),
+      data: data,
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => {
+        console.log(response);
+        setisLoading(false)
+      })
+      .catch((error) => {
+        console.log(error);
+        setisLoading(false)
+      });
+  };
   return (
     <>
       <NavBar />
@@ -56,27 +92,52 @@ export const ContactPage = () => {
                   ) : (
                     ""
                   )}
-                  <input
-                    className="contactOne w-100 mt-5"
-                    placeholder="First Name"
-                  />
-                  <input
-                    className="contactOne w-100 mt-5"
-                    placeholder="Mail"
-                    type="email"
-                  />
-                  <textarea
-                    type="text"
-                    class="multiline-input w-100 mt-5"
-                    placeholder="Message"
-                  />
-                  <Row>
-                    <div className="text-center">
-                      <ReadMoreButtonStyle className="mt-5">
-                        Submit
-                      </ReadMoreButtonStyle>
-                    </div>
-                  </Row>
+                  <form onSubmit={formik.handleSubmit}>
+                    <input
+                      className="contactOne w-100 mt-5"
+                      placeholder="First Name"
+                      onChange={formik.handleChange}
+                      name="first_name"
+                    />
+
+                    {formik.errors.first_name && (
+                      <span className="text-danger">
+                        {formik.errors.first_name.message}
+                      </span>
+                    )}
+                    <input
+                      className="contactOne w-100 mt-5"
+                      placeholder="Mail"
+                      type="email"
+                      name="email"
+                      onChange={formik.handleChange}
+                    />
+                    {formik.errors.email && (
+                      <span className="text-danger">
+                        {formik.errors.email.message}
+                      </span>
+                    )}
+                    <textarea
+                      type="text"
+                      class="multiline-input w-100 mt-5"
+                      placeholder="Message"
+                      name="message"
+                      onChange={formik.handleChange}
+                    />
+                    {formik.errors.message && (
+                      <span className="text-danger">
+                        {formik.errors.message.message}
+                      </span>
+                    )}
+                    <Row>
+                      <div className="text-center">
+                        <ReadMoreButtonStyle className="mt-5" type="submit">
+                          Submit
+                        </ReadMoreButtonStyle>
+                      </div>
+                    </Row>
+                  </form>
+
                   {width < 1200 ? (
                     <div className="text-center pt-4">
                       <ShareTextStyle className="mt-5 mb-4">

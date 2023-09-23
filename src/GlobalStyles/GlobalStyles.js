@@ -83,6 +83,7 @@ const ReadMoreButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
+  cursor: pointer;
   border-radius: 5px;
   border: 1px solid #d434fe;
   color: white;
