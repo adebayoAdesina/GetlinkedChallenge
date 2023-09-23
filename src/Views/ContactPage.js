@@ -8,88 +8,92 @@ import {
 } from "../GlobalStyles/GlobalStyles";
 import useWindowDimensions from "../utils/GetWindowDimensions";
 import { ShareIcons } from "../Components/ShareIcons";
+import { NavBar } from "../Components/NavBar";
 
 export const ContactPage = () => {
   const { width } = useWindowDimensions();
   return (
-    <ContactPageStyle className="mt-5 pt-5">
-      <Container>
-        <Row className="p-o m-0 ">
-          <div className="col-5 pt-5 p-0 m-0 contactLeft">
-            <GetTouchStyle>Get in touch</GetTouchStyle>
-            <GetTouchSubStyle>
-              Contact <br />
-              Information
-            </GetTouchSubStyle>
-            <GetTouchSubStyle>
-              27,Alara Street <br />
-              Yaba 100012 <br />
-              Lagos State <br />
-            </GetTouchSubStyle>
-            <GetTouchSubStyle>Call Us : 07067981819</GetTouchSubStyle>
-            <GetTouchSubStyle>
-              we are open from Monday-Friday <br />
-              08:00am - 05:00pm
-            </GetTouchSubStyle>
+    <>
+      <NavBar />
+      <ContactPageStyle className="mt-5 pt-5">
+        <Container>
+          <Row className="p-o m-0 ">
+            <div className="col-5 pt-5 p-0 m-0 contactLeft">
+              <GetTouchStyle>Get in touch</GetTouchStyle>
+              <GetTouchSubStyle>
+                Contact <br />
+                Information
+              </GetTouchSubStyle>
+              <GetTouchSubStyle>
+                27,Alara Street <br />
+                Yaba 100012 <br />
+                Lagos State <br />
+              </GetTouchSubStyle>
+              <GetTouchSubStyle>Call Us : 07067981819</GetTouchSubStyle>
+              <GetTouchSubStyle>
+                we are open from Monday-Friday <br />
+                08:00am - 05:00pm
+              </GetTouchSubStyle>
 
-            <Row>
-              <ShareTextStyle className="mt-5 mb-4">Share on</ShareTextStyle>
-              <ShareIcons />
-            </Row>
-          </div>
-          <div className="col-7 contactRight">
-            <ContactBoxStyle className="p-5">
-              <div className="p-5">
-                <ContactTopColoredText>
-                  Questions or need assistance?
-                </ContactTopColoredText>
-                <ContactTopColoredText className="mt-1">
-                  Let us know about it!
-                </ContactTopColoredText>
-                {width < 1200 ? (
-                  <ContactSubTitleStyle className="mt-3">
-                    Email us below to any question related to our event
-                  </ContactSubTitleStyle>
-                ) : (
-                  ""
-                )}
-                <input
-                  className="contactOne w-100 mt-5"
-                  placeholder="First Name"
-                />
-                <input
-                  className="contactOne w-100 mt-5"
-                  placeholder="Mail"
-                  type="email"
-                />
-                <textarea
-                  type="text"
-                  class="multiline-input w-100 mt-5"
-                  placeholder="Message"
-                />
-                <Row>
-                  <div className="text-center">
-                    <ReadMoreButtonStyle className="mt-5">
-                      Submit
-                    </ReadMoreButtonStyle>
-                  </div>
-                </Row>
-                {width < 1200 ? (
-                  <div className="text-center pt-4">
-                    <ShareTextStyle className="mt-5 mb-4">
-                      Share on
-                    </ShareTextStyle>
-                    <ShareIcons />
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-            </ContactBoxStyle>
-          </div>
-        </Row>
-      </Container>
-    </ContactPageStyle>
+              <Row>
+                <ShareTextStyle className="mt-5 mb-4">Share on</ShareTextStyle>
+                <ShareIcons />
+              </Row>
+            </div>
+            <div className="col-7 contactRight">
+              <ContactBoxStyle className="p-5">
+                <div className="p-5">
+                  <ContactTopColoredText>
+                    Questions or need assistance?
+                  </ContactTopColoredText>
+                  <ContactTopColoredText className="mt-1">
+                    Let us know about it!
+                  </ContactTopColoredText>
+                  {width < 1200 ? (
+                    <ContactSubTitleStyle className="mt-3">
+                      Email us below to any question related to our event
+                    </ContactSubTitleStyle>
+                  ) : (
+                    ""
+                  )}
+                  <input
+                    className="contactOne w-100 mt-5"
+                    placeholder="First Name"
+                  />
+                  <input
+                    className="contactOne w-100 mt-5"
+                    placeholder="Mail"
+                    type="email"
+                  />
+                  <textarea
+                    type="text"
+                    class="multiline-input w-100 mt-5"
+                    placeholder="Message"
+                  />
+                  <Row>
+                    <div className="text-center">
+                      <ReadMoreButtonStyle className="mt-5">
+                        Submit
+                      </ReadMoreButtonStyle>
+                    </div>
+                  </Row>
+                  {width < 1200 ? (
+                    <div className="text-center pt-4">
+                      <ShareTextStyle className="mt-5 mb-4">
+                        Share on
+                      </ShareTextStyle>
+                      <ShareIcons />
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </ContactBoxStyle>
+            </div>
+          </Row>
+        </Container>
+      </ContactPageStyle>
+    </>
   );
 };
 

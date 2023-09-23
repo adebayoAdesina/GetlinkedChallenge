@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import styled from "styled-components";
 import { StarImage, WhiteStar } from "../../utils/image";
 import { Blur, StarImageStyle } from "../../GlobalStyles/GlobalStyles";
+import { Link } from "react-router-dom";
 
 export const HomeHeroSection = () => {
   const ChainImageURL =
@@ -42,7 +43,9 @@ export const HomeHeroSection = () => {
             </ParticipationStyle>
           </Row>
           <Row className="pt-5 centerReg">
+           <Link to={'/register'}>
             <RegisterButtonStyle>Register</RegisterButtonStyle>
+           </Link>
           </Row>
           <StarImageStyle
             src={WhiteStar}
@@ -110,6 +113,7 @@ const LeftHeroSection = styled.div`
   padding-bottom: calc(4vh - 10%);
   div {
     position: relative;
+    transform: translateY(-15%);
   }
   @media only screen and (max-width: 1200px) {
     width: 100% !important;

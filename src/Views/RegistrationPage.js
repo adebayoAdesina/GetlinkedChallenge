@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { CategoriesListAction } from "../Store/Actions/CategoriesListAction";
 import axios from "axios";
 import { registration_url } from "../API/api";
+import { NavBar } from "../Components/NavBar";
 
 export const RegistrationPage = () => {
   // const navigation = useNavigate();
@@ -74,6 +75,8 @@ export const RegistrationPage = () => {
     }
   };
   return (
+    <>
+    <NavBar/>
     <RegistrationPageStyle className="mt-5 pt-5">
       <Container>
         <Row>
@@ -235,6 +238,7 @@ export const RegistrationPage = () => {
         ""
       )}
     </RegistrationPageStyle>
+    </>
   );
 };
 

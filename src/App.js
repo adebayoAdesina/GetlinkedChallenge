@@ -3,16 +3,38 @@ import "./App.css";
 import { LandingPage } from "./Views/LandingPage";
 import { ContactPage } from "./Views/ContactPage";
 import { RegistrationPage } from "./Views/RegistrationPage";
+import { useEffect, useState } from "react";
+
 const App = () => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 8000);
+  }, []);
+
   return (
     <>
-
+      {loading ? (
+        <div className="loading-spinners">
+          <div id="html-spinner"></div>
+          <div id="html-spinner"></div>
+          <p id="html-para">
+            <div className="logo">
+              <span className="get">
+                get<span className="linked">linked</span>
+              </span>
+            </div>
+          </p>
+        </div>
+      ) : (
         <Routes>
-          <Route path="" element={<LandingPage />} exact/>
-          <Route path="/contact" element={<ContactPage />} exact/>
-          <Route path="/register" element={<RegistrationPage />} exact/>
+          <Route path="" element={<LandingPage />} exact />
+          <Route path="/contact" element={<ContactPage />} exact />
+          <Route path="/register" element={<RegistrationPage />} exact />
         </Routes>
-
+      )}
     </>
   );
 };

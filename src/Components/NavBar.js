@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { CloseCircle, CloseImage, HamburgerImage } from "../utils/image";
 import "./NavBarStyle.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useWindowDimensions from "../utils/GetWindowDimensions";
 
 export const NavBar = () => {
@@ -18,13 +18,18 @@ export const NavBar = () => {
     setMobileNavbarVisible(false);
   };
 
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <NavBarStyle>
-      <LogoStyle href="#" className="logo">
-        <span className="get">
-          get<span className="linked">linked</span>
-        </span>
-      </LogoStyle>
+      <Link to="/">
+        <LogoStyle className="logo">
+          <span className="get">
+            get<span className="linked">linked</span>
+          </span>
+        </LogoStyle>
+      </Link>
       {width > 1200 ? (
         <>
           <NavLinksContainer>
@@ -32,9 +37,19 @@ export const NavBar = () => {
               <Link>Timeline</Link>
               <Link>Overview</Link>
               <Link>FAQs</Link>
-              <Link>Contact</Link>
+              {currentPath === "/contact" ? (
+                <Link to={"/contact"} className="selected-contact">Contact</Link>
+                ) : (
+                <Link to={"/contact"}>Contact</Link>
+              )}
             </NavLinks>
-            <button className="nav-btn">Register</button>
+            <Link to={"/register"}>
+              {currentPath === "/register" ? (
+                <button className="selected-nav-btn">Register</button>
+              ) : (
+                <button className="nav-btn">Register</button>
+              )}
+            </Link>
           </NavLinksContainer>{" "}
         </>
       ) : (
@@ -55,7 +70,12 @@ export const NavBar = () => {
                     alt="close_button"
                     onClick={closeMobileNavbar}
                   />
-                  <img src={CloseImage} alt="close" className="close" onClick={closeMobileNavbar} />
+                  <img
+                    src={CloseImage}
+                    alt="close"
+                    className="close"
+                    onClick={closeMobileNavbar}
+                  />
                 </div>
               </div>
               <div className="mobile-nav-links">
