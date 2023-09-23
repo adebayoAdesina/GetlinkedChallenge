@@ -157,7 +157,66 @@ const LineStyle = styled.div`
   background-color: #d434fe !important;
 `;
 
+const CardShadow = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    /* background-color: #ff7676; */
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #150e28;
+  }
+`;
+
+const SuccessImageStyle = styled.img`
+  position: absolute;
+  width: 288px;
+  height: 288px;
+  transform: translateX(-15%);
+`;
+
+const SuccessfullManStyle = styled.img`
+  width: 305px;
+  height: 305px;
+  /* position: relative; */
+  transform: translateX(15%);
+`;
+
+const CongratulationTextStyle = styled.div`
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+`;
+
+const ShowSuccessStyle = styled.div`
+  border-radius: 5px;
+  border: 1px solid #d434fe;
+  background: rgba(255, 255, 255, 0.01);
+  margin-top: 10vh;
+`;
+
+const ShowSuccessImagesStyle = styled.div`
+  display: block;
+  text-align: center;
+  position: relative;
+`;
+
+
 export {
+  ShowSuccessImagesStyle,
+  ShowSuccessStyle,
   TitleSectionStyle,
   SubTitleSectionStyle,
   FloatStarRight,
@@ -173,4 +232,8 @@ export {
   StepperSubTitle,
   StepperTitle,
   CenterStepperStyle,
+  CardShadow,
+  SuccessImageStyle,
+  SuccessfullManStyle,
+  CongratulationTextStyle,
 };

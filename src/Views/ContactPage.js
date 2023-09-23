@@ -5,6 +5,12 @@ import {
   ContactTopColoredText,
   ReadMoreButtonStyle,
   ContactBoxStyle,
+  SuccessImageStyle,
+  SuccessfullManStyle,
+  CardShadow,
+  CongratulationTextStyle,
+  ShowSuccessImagesStyle,
+  ShowSuccessStyle,
 } from "../GlobalStyles/GlobalStyles";
 import useWindowDimensions from "../utils/GetWindowDimensions";
 import { ShareIcons } from "../Components/ShareIcons";
@@ -13,6 +19,9 @@ import { useFormik } from "formik";
 import { ContactSchemas } from "../Schemas/ContactSchema";
 import axios from "axios";
 import { contact_url } from "../API/api";
+import { DotLoader } from "react-spinners";
+import { Link } from "react-router-dom";
+import { SuccessImage, SuccessfullMan } from "../utils/image";
 
 export const ContactPage = () => {
   const { width } = useWindowDimensions();
@@ -22,7 +31,7 @@ export const ContactPage = () => {
     message: "",
   };
 
-  const [isLoading, setisLoading] = useState(false)
+  const [isLoading, setisLoading] = useState(0);
 
   const formik = useFormik({
     initialValues: initialValues,
@@ -32,7 +41,7 @@ export const ContactPage = () => {
     },
   });
   const sendMessage = async (data) => {
-    setisLoading(true)
+    setisLoading(1);
     await axios({
       method: "post",
       url: contact_url(),
@@ -41,11 +50,11 @@ export const ContactPage = () => {
     })
       .then((response) => {
         console.log(response);
-        setisLoading(false)
+        setisLoading(2);
       })
       .catch((error) => {
         console.log(error);
-        setisLoading(false)
+        setisLoading(0);
       });
   };
   return (
@@ -153,6 +162,52 @@ export const ContactPage = () => {
             </div>
           </Row>
         </Container>
+        {isLoading === 1 ? (
+          <CardShadow>
+            <CenterSpinner>
+              <DotLoader color="#d434fe" />
+            </CenterSpinner>
+          </CardShadow>
+        ) : (
+          ""
+        )}
+
+        {isLoading === 2 ? (
+          <CardShadow>
+            <Row>
+              <div className="col"></div>
+              <ShowSuccessStyle className="col-4 p-5">
+                <Row>
+                  <ShowSuccessImagesStyle>
+                    <SuccessImageStyle src={SuccessImage} alt="success_image" />
+                    <SuccessfullManStyle
+                      src={SuccessfullMan}
+                      alt="successful_man"
+                    />
+                  </ShowSuccessImagesStyle>
+                </Row>
+                <Row>
+                  <CongratulationTextStyle>
+                    Message Sent
+                  </CongratulationTextStyle>
+                </Row>
+
+                <Row>
+                  <div className="text-center">
+                    <Link to={"/"}>
+                      <ReadMoreButtonStyle className="mt-2 w-100">
+                        Back
+                      </ReadMoreButtonStyle>{" "}
+                    </Link>
+                  </div>
+                </Row>
+              </ShowSuccessStyle>
+              <div className="col"></div>
+            </Row>
+          </CardShadow>
+        ) : (
+          ""
+        )}
       </ContactPageStyle>
     </>
   );
@@ -238,4 +293,11 @@ const ContactSubTitleStyle = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+`;
+
+const CenterSpinner = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
