@@ -38,15 +38,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## For Web View
 
 ### Landing Page
-<img src="/read_me_screenshot/Web capture_23-9-2023_102131_localhost.jpeg"  alt ='webview-landing-page/>
+<img src="/read_me_screenshot/webLanding.jpeg"  alt='webview-landing-page>
 
 
 ### Registration Page
-<img src="/read_me_screenshot/Web capture_23-9-2023_111110_localhost.jpeg" alt ='webview-registration-page/>
+<img src="/read_me_screenshot/webReg.jpeg" alt='webview-registration-page>
 
 
 ### Contact Page
-<img src="/read_me_screenshot/Web capture_23-9-2023_111317_localhost.jpeg"  alt ='webview-contact-page/>
+<img src="/read_me_screenshot/webContact.jpeg"  alt='webview-contact-page>
 
 
 
