@@ -29,7 +29,7 @@ export const HomePrivacyPolicySection = () => {
       initial="hidden"
     >
       <Container>
-        <Row className="PolicySection">
+        <Row className="PolicySection mb-5">
           <div className="col-6 mt-5 pt-5 leftPolicySection">
             <TitleSectionStyle>
               <h3 className="pt-1">Privacy Policy and</h3>
@@ -76,7 +76,7 @@ export const HomePrivacyPolicySection = () => {
             }}
           />
 
-          <div className="col-6 rightPolicySection">
+          <div className="col-6 rightPolicySection mb-3">
             <PrivacyRightSideStyle>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

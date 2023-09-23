@@ -20,7 +20,7 @@ export const HomePrizeAndRewardSection = () => {
   const [element, controls] = UseScroll();
 
   return (
-    <HomePrizeAndRewardStyle className="pb-5" ref={element}
+    <HomePrizeAndRewardStyle className="py-5 mt-5" ref={element}
     animate={controls}
     variants={RightSlideAnimation}
     initial="hidden">
