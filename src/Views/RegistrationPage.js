@@ -18,6 +18,7 @@ import {
   CongratulationTextStyle,
   ShowSuccessImagesStyle,
   ShowSuccessStyle,
+  CenterSpinner,
 } from "../GlobalStyles/GlobalStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { CategoriesListAction } from "../Store/Actions/CategoriesListAction";
@@ -26,16 +27,15 @@ import { registration_url } from "../API/api";
 import { NavBar } from "../Components/NavBar";
 import { useFormik } from "formik";
 import { RegistrationSchemas } from "../Schemas/RegistrationSchema";
+import { DotLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 export const RegistrationPage = () => {
   const [showShadow, setShowShadow] = useState(false);
+  const [isLoading, setisLoading] = useState(false);
 
   const exitDetail = (e) => {
     setShowShadow(true);
-  };
-
-  const backToHome = (e) => {
-    setShowShadow(false);
   };
 
   const dispatch = useDispatch();
@@ -47,6 +47,7 @@ export const RegistrationPage = () => {
   const { categories } = useSelector((state) => state.isCategories);
 
   const registerNewUser = async (value, e) => {
+    setisLoading(true);
     const sendingData = {
       email: value.email,
       phone_number: value.phone_number,
@@ -65,10 +66,12 @@ export const RegistrationPage = () => {
     })
       .then((response) => {
         console.log(response);
+        setisLoading(false);
         exitDetail();
       })
       .catch((error) => {
         console.error("Error:", error);
+        setisLoading(false);
       });
   };
 
@@ -278,11 +281,20 @@ export const RegistrationPage = () => {
             </div>
           </Row>
         </Container>
+        {isLoading === true ? (
+          <CardShadow>
+            <CenterSpinner>
+              <DotLoader color="#d434fe" />
+            </CenterSpinner>
+          </CardShadow>
+        ) : (
+          ""
+        )}
         {showShadow === true ? (
           <CardShadow className="shadow">
             <Row>
-              <div className="col"></div>
-              <ShowSuccessStyle className="col-4 p-5">
+              <div className="col col-md-4"></div>
+              <ShowSuccessStyle className="col col-md-4 p-5">
                 <Row>
                   <ShowSuccessImagesStyle>
                     <SuccessImageStyle src={SuccessImage} alt="success_image" />
@@ -306,12 +318,11 @@ export const RegistrationPage = () => {
                 </Row>
                 <Row>
                   <div className="text-center">
-                    <ReadMoreButtonStyle
-                      onClick={backToHome}
-                      className="mt-2 w-100"
-                    >
-                      Back
-                    </ReadMoreButtonStyle>
+                    <Link to="/">
+                      <ReadMoreButtonStyle className="mt-2 w-100">
+                        Back
+                      </ReadMoreButtonStyle>
+                    </Link>
                   </div>
                 </Row>
               </ShowSuccessStyle>

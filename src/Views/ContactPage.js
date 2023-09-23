@@ -11,6 +11,7 @@ import {
   CongratulationTextStyle,
   ShowSuccessImagesStyle,
   ShowSuccessStyle,
+  CenterSpinner,
 } from "../GlobalStyles/GlobalStyles";
 import useWindowDimensions from "../utils/GetWindowDimensions";
 import { ShareIcons } from "../Components/ShareIcons";
@@ -340,9 +341,3 @@ const ContactSubTitleStyle = styled.div`
   line-height: normal;
 `;
 
-const CenterSpinner = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;

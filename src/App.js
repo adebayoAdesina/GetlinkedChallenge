@@ -8,6 +8,7 @@ import {
   CreativeImage,
   ChainImageURL,
   BoomImageURL,
+  MaleWalking,
 } from "./utils/image";
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           <img src={CreativeImage} alt="creative" className="creative-image" />
           <img src={ChainImageURL} alt="chain_img" className="chain-image" />
           <img src={BoomImageURL} alt="boom_img" className="boom-image" />
+          <img src={MaleWalking} alt="boom_img" className="male-image" />
         </div>
       ) : (
         <Routes>

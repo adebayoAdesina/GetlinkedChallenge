@@ -205,6 +205,11 @@ const ShowSuccessStyle = styled.div`
   border: 1px solid #d434fe;
   background: rgba(255, 255, 255, 0.01);
   margin-top: 10vh;
+  @media only screen and (max-width: 899px) {
+    & {
+      transform: scale(0.9);
+    }
+  }
 `;
 
 const ShowSuccessImagesStyle = styled.div`
@@ -213,6 +218,13 @@ const ShowSuccessImagesStyle = styled.div`
   position: relative;
 `;
 
+
+const CenterSpinner = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 export {
   ShowSuccessImagesStyle,
@@ -236,4 +248,5 @@ export {
   SuccessImageStyle,
   SuccessfullManStyle,
   CongratulationTextStyle,
+  CenterSpinner
 };

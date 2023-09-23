@@ -108,14 +108,21 @@
   }
 }
 
+.loading-spinners {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 #html-spinner {
   position: absolute;
   top: 33vh;
   left: 46%;
 }
 
-#html-para,
-#svg-para {
+#html-para {
   position: absolute;
   top: 55vh;
   left: 36%;
@@ -144,13 +151,49 @@
   height: 103px;
   position: absolute;
   bottom: 5rem;
-
 }
 .boom-image {
   width: 83px;
   height: 103px;
   position: absolute;
   right: 5rem;
-
 }
 
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  #html-spinner {
+    top: 33vh;
+    left: 41%;
+  }
+
+  #html-para {
+    position: absolute;
+    top: 55vh;
+    left: 30%;
+    padding: 5%;
+    text-align: center;
+    font-family: "Clash Display";
+    font-size: 4.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  #html-spinner {
+    top: 33vh;
+    left: 35%;
+  }
+
+  #html-para {
+    position: absolute;
+    top: 60vh;
+    left: 21%;
+    padding: 5%;
+    text-align: center;
+    font-family: "Clash Display";
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
