@@ -195,6 +195,7 @@ const FooterSectionStyle = styled(motion.div)`
   @media only screen and (max-width: 1200px) {
     & {
       padding: 5%;
+      margin-top: 30%;
     }
     .footerRow {
       div:nth-child(1) {

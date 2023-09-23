@@ -120,6 +120,29 @@ const ImageTextStyle = styled.div`
     width: 49.43px;
     height: 57.974px;
   }
+  @media only screen and (max-width: 1200px) {
+    transform: translateX(13%);
+    padding-top: 30px;
+    img {
+      width: 380px;
+      height: 370px;
+    }
+    div {
+    transform: translate(160px, 185px);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 122.5%;
+  }
+  .rotateDiv {
+    transform: rotate(-70.92deg);
+    margin-top: 400px;
+    margin-left: 90%;
+    padding-bottom: 0 !important;
+  }
+  }
 `;
 
 const RightSectionStyle = styled.div`
