@@ -19,6 +19,7 @@ import {
   ShowSuccessImagesStyle,
   ShowSuccessStyle,
   CenterSpinner,
+  Blur,
 } from "../GlobalStyles/GlobalStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { CategoriesListAction } from "../Store/Actions/CategoriesListAction";
@@ -101,6 +102,11 @@ export const RegistrationPage = () => {
         <Container>
           <Row>
             <div className="registrationLeft col-12 col-md-6">
+            <Blur
+                    style={{
+                      transform: "translate(-35rem, 0rem)",
+                    }}
+                  />
               <RegistrationPageImageStyle
                 src={RegisterPageImage}
                 alt="registration_image"
@@ -276,6 +282,11 @@ export const RegistrationPage = () => {
                       </div>
                     </Row>
                   </form>
+                  <Blur
+                    style={{
+                      transform: "translate(20rem, -5rem)",
+                    }}
+                  />
                 </div>
               </ContactBoxStyle>
             </div>

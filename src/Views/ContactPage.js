@@ -12,6 +12,7 @@ import {
   ShowSuccessImagesStyle,
   ShowSuccessStyle,
   CenterSpinner,
+  Blur,
 } from "../GlobalStyles/GlobalStyles";
 import useWindowDimensions from "../utils/GetWindowDimensions";
 import { ShareIcons } from "../Components/ShareIcons";
@@ -37,7 +38,7 @@ export const ContactPage = () => {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: ContactSchemas,
-    validateOnChange:false,
+    validateOnChange: false,
     onSubmit: (values) => {
       sendMessage(values);
     },
@@ -104,8 +105,13 @@ export const ContactPage = () => {
       <ContactPageStyle className="pt-sm-0 mt-5 pt-5">
         <Container>
           <Row className="p-o m-0 ">
-            <div className="col-5 p-sm-0 m-sm-0 pt-5 p-0 m-0 contactLeft">
+            <div className="col-5  pt-5 p-0 m-0 contactLeft">
               <GetTouchStyle>Get in touch</GetTouchStyle>
+              <Blur
+                    style={{
+                      transform: "translate(-35rem, 0rem)",
+                    }}
+                  />
               <GetTouchSubStyle>
                 Contact <br />
                 Information
@@ -187,7 +193,11 @@ export const ContactPage = () => {
                       </div>
                     </Row>
                   </form>
-
+                  <Blur
+                    style={{
+                      transform: "translate(20rem, -5rem)",
+                    }}
+                  />
                   {width < 1200 ? (
                     <div className="text-center pt-4">
                       <ShareTextStyle className="mt-5 mb-4">
@@ -297,12 +307,10 @@ const ContactPageStyle = styled.div`
     .contactRight {
       position: absolute;
       width: 100%;
-     
+
       transform: translateY(-14%) !important;
     }
   }
-
-
 `;
 
 const GetTouchStyle = styled.div`
@@ -340,4 +348,3 @@ const ContactSubTitleStyle = styled.div`
   font-weight: 400;
   line-height: normal;
 `;
-

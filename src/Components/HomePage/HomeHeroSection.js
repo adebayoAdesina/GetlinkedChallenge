@@ -218,6 +218,8 @@ const RegisterButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
+    border-radius: 4px;
+  border: none;
   @media only screen and (max-width: 1200px) {
     justify-content: center !important;
     text-align: center !important;

@@ -22,9 +22,6 @@ export const HomeRulesSection = () => {
               }}
             />
             <div>
-              <TitleSectionStyle>
-                <h3 className="pt-1">
-                  Rules and{" "}
                   <StarImageStyle
                     src={WhiteStar}
                     alt="colored_star"
@@ -33,6 +30,9 @@ export const HomeRulesSection = () => {
                       opacity: "0.6",
                     }}
                   />
+              <TitleSectionStyle>
+                <h3 className="pt-1">
+                  Rules and
                 </h3>
                 <h3 className="pt-3">Guidelines</h3>
               </TitleSectionStyle>

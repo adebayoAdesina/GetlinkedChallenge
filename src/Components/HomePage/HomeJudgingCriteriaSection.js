@@ -138,4 +138,6 @@ const ReadMoreButtonStyle = styled.button`
   color: white;
   width: 172px;
   height: 53px;
+  border-radius: 4px;
+  border: none;
 `;

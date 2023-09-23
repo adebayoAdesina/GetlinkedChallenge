@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
+  Blur,
   SubTitleSectionStyle,
   TitleSectionStyle,
 } from "../../GlobalStyles/GlobalStyles";
@@ -58,6 +59,13 @@ export const HomePrivacyPolicySection = () => {
               </Row>
             </LicensingPolicySectionStyle>
           </div>
+          <Blur
+            style={{
+              transform: "translate(-20rem, 50rem)",
+              filter: 'blur(150px)'
+            }}
+          />
+
           <div className="col-6 rightPolicySection">
             <PrivacyRightSideStyle>
               <svg
@@ -172,6 +180,8 @@ const ReadMoreButtonStyle = styled.button`
   color: white;
   width: 172px;
   height: 53px;
+  border-radius: 4px;
+  border: none;
 `;
 
 const PrivacyRightSideStyle = styled.div`

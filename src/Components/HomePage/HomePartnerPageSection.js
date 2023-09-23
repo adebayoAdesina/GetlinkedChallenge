@@ -9,6 +9,7 @@ import {
   winWiseSVG,
   wisperSVG,
 } from "../../utils/image";
+import { Blur } from "../../GlobalStyles/GlobalStyles";
 
 export const HomePartnerPageSection = () => {
   return (
@@ -24,6 +25,11 @@ export const HomePartnerPageSection = () => {
             </h6>
           </TimelineSectionStyled>
         </Row>
+        <Blur
+          style={{
+            transform: "translate(-25rem, -5rem)",
+          }}
+        />
         <PartnerImagesStyle className="my-5">
           <Row className="heightSpacing"></Row>
 
@@ -91,9 +97,15 @@ export const HomePartnerPageSection = () => {
                 </div>
               </Row>
             </div>
+            <Blur
+              style={{
+                transform: "translate(50rem, 20rem)",
+              }}
+            />
           </Row>
         </PartnerImagesStyle>
       </Container>
+      <Row className="p-5 m-5"></Row>
     </HomePartnerPageStyle>
   );
 };
