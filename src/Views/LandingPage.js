@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeHeroSection } from "../Components/HomePage/HomeHeroSection";
-import { Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { HomeIntroductionSection } from "../Components/HomePage/HomeIntroductconSection";
 import { HomeRulesSection } from "../Components/HomePage/HomeRulesSection";
@@ -17,6 +17,7 @@ export const LandingPage = () => {
   return (
     <div>
       <NavBar />
+      <Container>
       <Row>
         <TopRowText varient="center" className="mt-4">
           Igniting a Revolution in HR Innovation{" "}
@@ -37,8 +38,9 @@ export const LandingPage = () => {
           </div>
         </TopRowText>
       </Row>
-
+      </Container>
       <HomeHeroSection />
+      <hr />
       <HomeIntroductionSection />
       <hr />
       <HomeRulesSection />
@@ -64,7 +66,7 @@ const TopRowText = styled.div`
   font-weight: 700;
   line-height: normal;
   align-items: right;
-  padding-right: 5%;
+  padding-right: 0%;
   hr {
     border: 1px solid rgba(255, 255, 255, 0.18);
   }

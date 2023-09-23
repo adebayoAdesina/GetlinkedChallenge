@@ -5,6 +5,7 @@ import "./NavBarStyle.css";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import useWindowDimensions from "../utils/GetWindowDimensions";
+import { Container } from "react-bootstrap";
 
 export const NavBar = () => {
   const { width } = useWindowDimensions();
@@ -22,88 +23,98 @@ export const NavBar = () => {
   const currentPath = location.pathname;
 
   return (
+    <NavSectionStyle>
+      <Container>
     <NavBarStyle>
-      <Link to="/">
-        <LogoStyle className="logo">
-          <span className="get">
-            get<span className="linked">linked</span>
-          </span>
-        </LogoStyle>
-      </Link>
-      {width > 1200 ? (
-        <>
-          <NavLinksContainer>
-            <NavLinks>
-              <Link>Timeline</Link>
-              <Link>Overview</Link>
-              <Link>FAQs</Link>
-              {currentPath === "/contact" ? (
-                <Link to={"/contact"} className="selected-contact">Contact</Link>
+        <Link to="/">
+          <LogoStyle className="logo">
+            <span className="get">
+              get<span className="linked">linked</span>
+            </span>
+          </LogoStyle>
+        </Link>
+        {width > 1200 ? (
+          <>
+            <NavLinksContainer>
+              <NavLinks>
+                <Link>Timeline</Link>
+                <Link>Overview</Link>
+                <Link>FAQs</Link>
+                {currentPath === "/contact" ? (
+                  <Link to={"/contact"} className="selected-contact">
+                    Contact
+                  </Link>
                 ) : (
-                <Link to={"/contact"}>Contact</Link>
-              )}
-            </NavLinks>
-            <Link to={"/register"}>
-              {currentPath === "/register" ? (
-                <button className="selected-nav-btn">Register</button>
-              ) : (
-                <button className="nav-btn">Register</button>
-              )}
-            </Link>
-          </NavLinksContainer>{" "}
-        </>
-      ) : (
-        <>
-          <img
-            src={HamburgerImage}
-            alt="hamburger"
-            className="hamburger"
-            id="navbar-toggle"
-            onClick={toggleMobileNavbar}
-          />
-          {mobileNavbarVisible === true ? (
-            <div id="mobile-navbar" className="mobile-nav-links-container">
-              <div id="nav-toggle2" className="close-icon-container">
-                <div className="close-btn">
-                  <img
-                    src={CloseCircle}
-                    alt="close_button"
-                    onClick={closeMobileNavbar}
-                  />
-                  <img
-                    src={CloseImage}
-                    alt="close"
-                    className="close"
-                    onClick={closeMobileNavbar}
-                  />
+                  <Link to={"/contact"}>Contact</Link>
+                )}
+              </NavLinks>
+              <Link to={"/register"}>
+                {currentPath === "/register" ? (
+                  <button className="selected-nav-btn">Register</button>
+                ) : (
+                  <button className="nav-btn">Register</button>
+                )}
+              </Link>
+            </NavLinksContainer>{" "}
+          </>
+        ) : (
+          <>
+            <img
+              src={HamburgerImage}
+              alt="hamburger"
+              className="hamburger"
+              id="navbar-toggle"
+              onClick={toggleMobileNavbar}
+            />
+            {mobileNavbarVisible === true ? (
+              <div id="mobile-navbar" className="mobile-nav-links-container">
+                <div id="nav-toggle2" className="close-icon-container">
+                  <div className="close-btn">
+                    <img
+                      src={CloseCircle}
+                      alt="close_button"
+                      onClick={closeMobileNavbar}
+                    />
+                    <img
+                      src={CloseImage}
+                      alt="close"
+                      className="close"
+                      onClick={closeMobileNavbar}
+                    />
+                  </div>
+                </div>
+                <div className="mobile-nav-links">
+                  <Link className="mobile-nav-links--link">Timeline</Link>
+                  <Link className="mobile-nav-links--link">Overview</Link>
+                  <Link className="mobile-nav-links--link">FAQs</Link>
+                  <Link className="mobile-nav-links--link">Contact</Link>
+                </div>
+                <div>
+                  <button className="mobile-nav-btn">Register</button>
                 </div>
               </div>
-              <div className="mobile-nav-links">
-                <Link className="mobile-nav-links--link">Timeline</Link>
-                <Link className="mobile-nav-links--link">Overview</Link>
-                <Link className="mobile-nav-links--link">FAQs</Link>
-                <Link className="mobile-nav-links--link">Contact</Link>
-              </div>
-              <div>
-                <button className="mobile-nav-btn">Register</button>
-              </div>
-            </div>
-          ) : (
-            ""
-          )}{" "}
-        </>
-      )}
+            ) : (
+              ""
+            )}{" "}
+          </>
+        )}
     </NavBarStyle>
+      </Container>
+      </NavSectionStyle>
   );
 };
+
+const NavSectionStyle = styled.div`
+ border-bottom: 1px solid #ffffff2e;
+`
 
 const NavBarStyle = styled.nav`
   display: flex;
   justify-content: space-between;
   flex: 1;
-  border-bottom: 1px solid #ffffff2e;
+ 
   align-items: center;
-  padding: 2.2% 8% 1.8%;
+  padding: 2.2% 0% 1.8% 0%;
   position: relative;
   a {
     font-family: "Montserrat";

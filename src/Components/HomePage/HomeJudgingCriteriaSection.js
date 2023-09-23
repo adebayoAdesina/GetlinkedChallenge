@@ -110,8 +110,8 @@ export const HomeJudgingCriteriaSection = () => {
 };
 
 const HomeJudgingCriteriaStyle = styled.div`
-  padding-top: 5%;
-  padding-bottom: 7%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 `;
 const LeftSectionStyle = styled.div`
   @media only screen and (max-width: 1200px) {

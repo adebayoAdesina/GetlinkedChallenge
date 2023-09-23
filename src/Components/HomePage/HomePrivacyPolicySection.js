@@ -96,8 +96,8 @@ export const HomePrivacyPolicySection = () => {
 };
 
 const HomePrivacyPolicyStyle = styled.div`
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
   @media only screen and (max-width: 1200px) {
     .PolicySection {
       display: inline-block !important;
