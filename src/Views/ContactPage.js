@@ -36,10 +36,12 @@ export const ContactPage = () => {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: ContactSchemas,
+    validateOnChange:false,
     onSubmit: (values) => {
       sendMessage(values);
     },
   });
+
   const sendMessage = async (data) => {
     setisLoading(1);
     await axios({
@@ -59,11 +61,49 @@ export const ContactPage = () => {
   };
   return (
     <>
-      <NavBar />
-      <ContactPageStyle className="mt-5 pt-5">
+      {width > 1200 ? (
+        <NavBar />
+      ) : (
+        <Container className="p-5">
+          <Link to={"/"}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="23"
+              height="23"
+              viewBox="0 0 23 23"
+              fill="none"
+            >
+              <circle
+                cx="11.5"
+                cy="11.5"
+                r="11"
+                stroke="url(#paint0_linear_177_298)"
+              />
+              <path
+                d="M12.2666 9.20001L9.19995 12.2667L12.2666 14.5667"
+                stroke="white"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_177_298"
+                  x1="11.5"
+                  y1="0"
+                  x2="11.5"
+                  y2="23"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#903AFF" />
+                  <stop offset="1" stop-color="#FF26B9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </Link>
+        </Container>
+      )}
+      <ContactPageStyle className="pt-sm-0 mt-5 pt-5">
         <Container>
           <Row className="p-o m-0 ">
-            <div className="col-5 pt-5 p-0 m-0 contactLeft">
+            <div className="col-5 p-sm-0 m-sm-0 pt-5 p-0 m-0 contactLeft">
               <GetTouchStyle>Get in touch</GetTouchStyle>
               <GetTouchSubStyle>
                 Contact <br />
@@ -175,8 +215,8 @@ export const ContactPage = () => {
         {isLoading === 2 ? (
           <CardShadow>
             <Row>
-              <div className="col"></div>
-              <ShowSuccessStyle className="col-4 p-5">
+              <div className="col col-md-4"></div>
+              <ShowSuccessStyle className="col col-md-4 p-5">
                 <Row>
                   <ShowSuccessImagesStyle>
                     <SuccessImageStyle src={SuccessImage} alt="success_image" />
@@ -254,9 +294,14 @@ const ContactPageStyle = styled.div`
       display: none;
     }
     .contactRight {
+      position: absolute;
       width: 100%;
+     
+      transform: translateY(-14%) !important;
     }
   }
+
+
 `;
 
 const GetTouchStyle = styled.div`

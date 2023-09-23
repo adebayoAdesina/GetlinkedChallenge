@@ -119,6 +119,15 @@ const HomeHeroSectionStyled = styled.div`
       justify-content: center !important;
       text-align: center !important;
     }
+    .hackImages {
+    display: inline-flex;
+    div {
+      transform: translateY(00%);
+    }
+  }
+  .heroSetStyle {
+    transform: translateY(0%);
+  }
   }
 `;
 const LeftHeroSection = styled.div`
@@ -127,14 +136,15 @@ const LeftHeroSection = styled.div`
   /* z-index: 1; */
   transform: translateY(-10%);
   width: 50%;
-  div {
-    /* position: relative; */
-    /* transform: translateY(-15%); */
-  }
+  
   @media only screen and (max-width: 1200px) {
     width: 100% !important;
     padding-left: 4%;
     padding-top: 0%;
+    div {
+    /* position: relative;  */
+    transform: translateY(10%);
+  }
   }
 `;
 const GetLinkedStyled = styled.div`
@@ -236,7 +246,7 @@ const RightSectionStyled = styled.div`
   }
   @media only screen and (max-width: 900px) {
     position: relative;
-    transform: translateY(-30%);
+    transform: translateY(28%);
     #personImage {
       width: 150% !important;
       background-blend-mode: luminosity;
@@ -251,7 +261,7 @@ const RightSectionStyled = styled.div`
   }
   @media only screen and (min-width: 899px) and (max-width: 1200px) {
     position: relative;
-    transform: translateY(-20%);
+    transform: translateY(29%);
   }
 `;
 

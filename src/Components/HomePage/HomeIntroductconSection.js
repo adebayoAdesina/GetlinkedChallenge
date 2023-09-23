@@ -77,10 +77,12 @@ const HomeIntroductionStyle = styled.div`
 `;
 
 const LeftSectionStyle = styled.div`
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 900px) {
     width: 100%;
-    transform: translate(-20%, -40%);
+    transform: translate(-20%, 0%);
   }
+ 
+
 `;
 
 const ImageTextStyle = styled.div`
