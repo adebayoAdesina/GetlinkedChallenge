@@ -7,10 +7,17 @@ import {
   SubTitleSectionStyle,
   ColoredStarStyle,
 } from "../../GlobalStyles/GlobalStyles";
+import { UseScroll } from "../../utils/UseScroll";
+import { ScaleSectionAnimation } from "../../GlobalStyles/Animation";
+import { motion } from "framer-motion";
 
 export const HomeIntroductionSection = () => {
+  const [element, controls] = UseScroll();
   return (
-    <HomeIntroductionStyle>
+    <HomeIntroductionStyle ref={element}
+    animate={controls}
+    variants={ScaleSectionAnimation}
+    initial="hidden">
       <Container>
         <Row>
           <LeftSectionStyle className="col-6">
@@ -68,11 +75,9 @@ export const HomeIntroductionSection = () => {
   );
 };
 
-const HomeIntroductionStyle = styled.div`
+const HomeIntroductionStyle = styled(motion.div)`
   padding-top: 1%;
   padding-bottom: 2%;
-
-  /* border: 1px solid rgba(255, 255, 255, 0.18); */
   background: #140d27;
 `;
 

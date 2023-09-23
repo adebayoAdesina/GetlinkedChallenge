@@ -10,10 +10,18 @@ import {
   wisperSVG,
 } from "../../utils/image";
 import { Blur } from "../../GlobalStyles/GlobalStyles";
+import { UseScroll } from "../../utils/UseScroll";
+import { FadeSectionAnimation } from "../../GlobalStyles/Animation";
+import { motion } from "framer-motion";
 
 export const HomePartnerPageSection = () => {
+
+  const [element, controls] = UseScroll();
   return (
-    <HomePartnerPageStyle>
+    <HomePartnerPageStyle ref={element}
+    animate={controls}
+    variants={FadeSectionAnimation}
+    initial="hidden">
       <Container>
         <Row>
           <TimelineSectionStyled>
@@ -110,7 +118,7 @@ export const HomePartnerPageSection = () => {
   );
 };
 
-const HomePartnerPageStyle = styled.div`
+const HomePartnerPageStyle = styled(motion.div)`
   .partnerSpacing {
     height: 10rem;
     align-content: space-around;

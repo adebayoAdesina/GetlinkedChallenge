@@ -24,6 +24,8 @@ import { contact_url } from "../API/api";
 import { DotLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 import { SuccessImage, SuccessfullMan } from "../utils/image";
+import { motion } from "framer-motion";
+import { PageAnimation } from "../GlobalStyles/Animation";
 
 export const ContactPage = () => {
   const { width } = useWindowDimensions();
@@ -62,7 +64,12 @@ export const ContactPage = () => {
       });
   };
   return (
-    <>
+    <motion.div
+      exit="exit"
+      variants={PageAnimation}
+      initial="hidden"
+      animate="show"
+    >
       {width > 1200 ? (
         <NavBar />
       ) : (
@@ -108,10 +115,10 @@ export const ContactPage = () => {
             <div className="col-5  pt-5 p-0 m-0 contactLeft">
               <GetTouchStyle>Get in touch</GetTouchStyle>
               <Blur
-                    style={{
-                      transform: "translate(-35rem, 0rem)",
-                    }}
-                  />
+                style={{
+                  transform: "translate(-35rem, 0rem)",
+                }}
+              />
               <GetTouchSubStyle>
                 Contact <br />
                 Information
@@ -260,7 +267,7 @@ export const ContactPage = () => {
           ""
         )}
       </ContactPageStyle>
-    </>
+    </motion.div>
   );
 };
 

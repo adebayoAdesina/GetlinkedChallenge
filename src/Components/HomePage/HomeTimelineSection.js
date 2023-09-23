@@ -4,11 +4,21 @@ import styled from "styled-components";
 import { Container, Row } from "react-bootstrap";
 import useWindowDimensions from "../../utils/GetWindowDimensions";
 import { MobileStepper } from "../Stepper/MobileStepper";
+import { UseScroll } from "../../utils/UseScroll";
+import { ScaleSectionAnimation } from "../../GlobalStyles/Animation";
+import { motion } from "framer-motion";
 
 export const HomeTimelineSection = () => {
+  const [element, controls] = UseScroll();
   const { width } = useWindowDimensions();
   return (
-    <HomeTimelineStyle className="py-5">
+    <HomeTimelineStyle
+      className="pt-5"
+      ref={element}
+      animate={controls}
+      variants={ScaleSectionAnimation}
+      initial="hidden"
+    >
       <Container>
         <Row>
           <TimelineSectionStyled>
@@ -25,7 +35,7 @@ export const HomeTimelineSection = () => {
   );
 };
 
-const HomeTimelineStyle = styled.div``;
+const HomeTimelineStyle = styled(motion.div)``;
 const TimelineSectionStyled = styled.div`
   text-align: center;
   align-content: center;

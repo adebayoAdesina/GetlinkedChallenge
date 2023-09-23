@@ -11,10 +11,19 @@ import {
   PrizeImage,
   SilverImage,
 } from "../../utils/image";
+import { UseScroll } from "../../utils/UseScroll";
+import { RightSlideAnimation } from "../../GlobalStyles/Animation";
+import { motion } from "framer-motion";
 
 export const HomePrizeAndRewardSection = () => {
+
+  const [element, controls] = UseScroll();
+
   return (
-    <HomePrizeAndRewardStyle className="py-5 mt-5">
+    <HomePrizeAndRewardStyle className="pb-5" ref={element}
+    animate={controls}
+    variants={RightSlideAnimation}
+    initial="hidden">
       <Container>
         <Row>
           <div className="col-6"></div>
@@ -76,7 +85,7 @@ export const HomePrizeAndRewardSection = () => {
   );
 };
 
-const HomePrizeAndRewardStyle = styled.div`
+const HomePrizeAndRewardStyle = styled(motion.div)`
   /* background: url("https://s3-alpha-sig.figma.com/img/e4fd/0cef/d1777da401e1799ab23ea13eea056892?Expires=1696204800&Signature=XElBc6LwtaVEC1noTiD9SBz0oxCvMmX8vmbYKFMnJdYPf39FfrZWIq5OgYf~5EnX3BDW5iKZ0E0wSq54DQeZRc0BplQYVyOjSzH6ziubYprLZi7IDMj-sZ7MWd5MGnPhn-yyhy8Gmjn5nwu4cqNqGNXAUVr4T6Kzt80su7Z2LjTBSmfROGu029HyRMmyWybR8OHR8Cnhfns04t~mt9es5YeMA~VzvQPwv4vAe32~6FTmJWlZ2vpX87F1OERT88s6Nj69pSYKaLzPphIKYYFzKjynvkdkONU1RrrJcPywZtxhDWmi4IhHYlq7nH~eAVMjXnoYp8hshi8tmyKCiekD3g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"),
     lightgray 0px -0.093px / 100% 109.967% no-repeat; */
   background-blend-mode: color-burn;

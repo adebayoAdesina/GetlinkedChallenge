@@ -3,11 +3,19 @@ import { Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { FollowTextStyle } from "../GlobalStyles/GlobalStyles";
 import useWindowDimensions from "../utils/GetWindowDimensions";
+import { FooterAnimation } from "../GlobalStyles/Animation";
+import { motion } from "framer-motion";
+import { UseScroll } from "../utils/UseScroll";
 
 export const FooterSection = () => {
   const { width } = useWindowDimensions();
+  const [element, controls] = UseScroll();
+
   return (
-    <FooterSectionStyle>
+    <FooterSectionStyle  ref={element}
+    animate={controls}
+    variants={FooterAnimation}
+    initial="hidden">
       <Container>
         <Row className="footerRow">
           <div className="col-6 p-0">
@@ -171,7 +179,7 @@ export const FooterSection = () => {
   );
 };
 
-const FooterSectionStyle = styled.div`
+const FooterSectionStyle = styled(motion.div)`
   background: #100b20;
   padding-top: 5%;
   padding-bottom: 3%;

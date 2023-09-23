@@ -10,9 +10,10 @@ import {
   Blur,
 } from "../../GlobalStyles/GlobalStyles";
 import { ColoredStar, QuestionImage, WhiteStar } from "../../utils/image";
-
 import FaqToggle from "../Faqtoggle";
-
+import { UseScroll } from "../../utils/UseScroll";
+import { FadeSectionAnimation } from "../../GlobalStyles/Animation";
+import { motion } from "framer-motion";
 export const HomeFrequentlySection = () => {
   const FaqList = [
     `Can I work on a project I started before the hackathon?`,
@@ -22,8 +23,15 @@ export const HomeFrequentlySection = () => {
     `What happens after the hackathon ends`,
     `Can I work on a project I started before the hackathon?`,
   ];
+
+  const [element, controls] = UseScroll();
   return (
-    <HomeFrequentlyStyle>
+    <HomeFrequentlyStyle
+      ref={element}
+      animate={controls}
+      variants={FadeSectionAnimation}
+      initial="hidden"
+    >
       <Container className="py-5">
         <Row>
           <LeftSectionStyle className="col-6">
@@ -40,8 +48,8 @@ export const HomeFrequentlySection = () => {
               <h3 className="pt-3">Question</h3>
             </TitleSectionStyle>
             <SubTitleSectionStyle className="pt-4">
-              We got answers to the questions that you might want to ask
-              about getlinked Hackathon 1.0
+              We got answers to the questions that you might want to ask about
+              getlinked Hackathon 1.0
             </SubTitleSectionStyle>
             <div className="pt-5">
               {FaqList.length !== 0
@@ -93,7 +101,7 @@ export const HomeFrequentlySection = () => {
   );
 };
 
-const HomeFrequentlyStyle = styled.div``;
+const HomeFrequentlyStyle = styled(motion.div)``;
 const LeftSectionStyle = styled.div`
   padding-top: 10%;
   @media only screen and (max-width: 1200px) {
@@ -103,7 +111,8 @@ const LeftSectionStyle = styled.div`
 const RightSectionStyle = styled.div`
   @media only screen and (max-width: 1200px) {
     width: 100%;
-  }`;
+  }
+`;
 const QuestionTextStyle = styled.div`
   display: flex;
   transform: translate(15%, 80px);

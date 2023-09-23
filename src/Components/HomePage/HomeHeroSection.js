@@ -10,14 +10,34 @@ import {
 } from "../../utils/image";
 import { Blur, StarImageStyle } from "../../GlobalStyles/GlobalStyles";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FadeAnimation, FadeSectionAnimation, ScaleAnimation } from "../../GlobalStyles/Animation";
+import { UseScroll } from "../../utils/UseScroll";
 
 export const HomeHeroSection = () => {
   const HeroImageURL =
     "https://s3-alpha-sig.figma.com/img/2cea/d700/cfbd4eb06b68c33fac2a89295904df2c?Expires=1696204800&Signature=Pl8bxQP7ZWA8IQ~PcHxowSaaCsU8KsCWsjtAdV6WbycHB9CRSS3HmiUrIoLq7x8FSDNA5qhlVqpaF9PjBCB7vHkotMawDRLRihUUfrQSiMjhzG1sXACFmEqCbgbAOnmThDsh05K5hvMNlu0aZjKfhaWi3WigTfEpzQu79zcsA-xggSvAG3k5-pvQEoXQiViO6zISNYUBUgSoT6iO4SJ7jwGKZOA1tL3MGCzbwMyaTEqn8yLde~kSrWX34kogEmUFU9ziDrla9dgaxjRFUFtuDiw2J5NKDjGqV5QjoAQwb~SsNsFDcCq3Jq76s-4WdTGa2vBih1ibhsrAHsdeW0m6xg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
 
+  const AnimateHeroContainer = {
+    hidden: { x: -300 },
+    show: {
+      x: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+        staggerChildren: 1,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const [element, controls] = UseScroll();
   return (
     <Container>
-      <HomeHeroSectionStyled>
+      <HomeHeroSectionStyled ref={element}
+    animate={controls}
+    variants={FadeSectionAnimation}
+    initial="hidden">
         <Row>
           <LeftHeroSection className="col-6">
             <StarImageStyle
@@ -28,12 +48,22 @@ export const HomeHeroSection = () => {
               }}
             />
             <Blur />
-            <div>
+            <motion.div
+              variants={AnimateHeroContainer}
+              initial="hidden"
+              animate="show"
+            >
               <div className="heroSetStyle">
                 <CreativeStyle src={CreativeImage} alt="creative" />
-                <GetLinkedStyled>getlinked Tech</GetLinkedStyled>
+                <GetLinkedStyled
+                  variants={FadeAnimation}
+                  initial="hidden"
+                  animate="show"
+                >
+                  getlinked Tech
+                </GetLinkedStyled>
 
-                <HackathonStyled className="m-0 p-0">
+                <HackathonStyled className="m-0 p-0" variants={FadeAnimation}>
                   Hackathon&nbsp;
                   <div className="hackImages">
                     <div>&nbsp; 1.0 </div>
@@ -43,7 +73,7 @@ export const HomeHeroSection = () => {
                 </HackathonStyled>
               </div>
               <Row>
-                <ParticipationStyle>
+                <ParticipationStyle variants={FadeAnimation}>
                   Participate in getlinked tech Hackathon 2023 stand
                   <br />a chance to win a Big prize
                 </ParticipationStyle>
@@ -71,7 +101,7 @@ export const HomeHeroSection = () => {
                   <h6>s</h6>
                 </HeroTimeSectionStyle>
               </Row>
-            </div>
+            </motion.div>
           </LeftHeroSection>
           <RightSectionStyled className="col-6">
             <Blur
@@ -81,7 +111,7 @@ export const HomeHeroSection = () => {
                 height: "240px",
               }}
             />
-            <div>
+            <motion.div variants={ScaleAnimation} initial="hidden" animate="show">
               <StarImageStyle
                 src={WhiteStar}
                 alt="colored_star"
@@ -92,7 +122,7 @@ export const HomeHeroSection = () => {
               />
               <img src={HeroImageURL} alt="person_image" id="personImage" />
               <img src={StarImage} alt="star" id="starImage" />
-            </div>
+            </motion.div>
           </RightSectionStyled>
         </Row>
       </HomeHeroSectionStyled>
@@ -100,7 +130,7 @@ export const HomeHeroSection = () => {
   );
 };
 
-const HomeHeroSectionStyled = styled.div`
+const HomeHeroSectionStyled = styled(motion.div)`
   padding-top: 3%;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -120,14 +150,14 @@ const HomeHeroSectionStyled = styled.div`
       text-align: center !important;
     }
     .hackImages {
-    display: inline-flex;
-    div {
-      transform: translateY(00%);
+      display: inline-flex;
+      div {
+        transform: translateY(00%);
+      }
     }
-  }
-  .heroSetStyle {
-    transform: translateY(0%);
-  }
+    .heroSetStyle {
+      transform: translateY(0%);
+    }
   }
 `;
 const LeftHeroSection = styled.div`
@@ -136,18 +166,18 @@ const LeftHeroSection = styled.div`
   /* z-index: 1; */
   transform: translateY(-10%);
   width: 50%;
-  
+
   @media only screen and (max-width: 1200px) {
     width: 100% !important;
     padding-left: 4%;
     padding-top: 0%;
     div {
-    /* position: relative;  */
-    transform: translateY(10%);
-  }
+      /* position: relative;  */
+      transform: translateY(10%);
+    }
   }
 `;
-const GetLinkedStyled = styled.div`
+const GetLinkedStyled = styled(motion.div)`
   font-family: Clash Display;
   font-size: 80px;
   font-style: normal;
@@ -158,7 +188,8 @@ const GetLinkedStyled = styled.div`
     text-align: center;
   }
 `;
-const HackathonStyled = styled.div`
+
+const HackathonStyled = styled(motion.div)`
   color: #fff;
   font-family: Clash Display;
   font-size: 80px;
@@ -193,7 +224,7 @@ const HackathonStyled = styled.div`
   }
 `;
 
-const ParticipationStyle = styled.div`
+const ParticipationStyle = styled(motion.div)`
   color: #fff;
   font-family: Montserrat;
   font-size: 20px;
@@ -218,7 +249,7 @@ const RegisterButtonStyle = styled.button`
     #ff26b9 99.99%,
     #fe34b9 100%
   );
-    border-radius: 4px;
+  border-radius: 4px;
   border: none;
   @media only screen and (max-width: 1200px) {
     justify-content: center !important;
@@ -227,7 +258,7 @@ const RegisterButtonStyle = styled.button`
 `;
 
 const RightSectionStyled = styled.div`
-  transform: translateY(18%);
+  transform: translate(-10%,2%);
 
   div {
     display: flex;
@@ -235,7 +266,7 @@ const RightSectionStyled = styled.div`
     #personImage {
       float: right;
       flex-shrink: 0;
-      width: 120%;
+      width: 150%;
       background-blend-mode: luminosity;
     }
     #starImage {
@@ -248,7 +279,7 @@ const RightSectionStyled = styled.div`
   }
   @media only screen and (max-width: 900px) {
     position: relative;
-    transform: translateY(28%);
+    transform: translate(0%, 4.8%);
     #personImage {
       width: 150% !important;
       background-blend-mode: luminosity;
@@ -263,7 +294,7 @@ const RightSectionStyled = styled.div`
   }
   @media only screen and (min-width: 899px) and (max-width: 1200px) {
     position: relative;
-    transform: translateY(29%);
+    transform: translate(18%,2.2%);
   }
 `;
 

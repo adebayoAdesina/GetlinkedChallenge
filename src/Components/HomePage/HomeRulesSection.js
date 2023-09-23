@@ -8,10 +8,17 @@ import {
   StarImageStyle,
 } from "../../GlobalStyles/GlobalStyles";
 import { RulesImage, WhiteStar } from "../../utils/image";
+import { UseScroll } from "../../utils/UseScroll";
+import { motion } from "framer-motion";
+import { LeftSlideAnimation } from "../../GlobalStyles/Animation";
 
 export const HomeRulesSection = () => {
+  const [element, controls] = UseScroll();
   return (
-    <HomeRulesStyle>
+    <HomeRulesStyle ref={element}
+    animate={controls}
+    variants={LeftSlideAnimation}
+    initial="hidden">
       <Container>
         <Row className="reverseFlex">
           <LeftSectionStyle className="col-6">
@@ -72,7 +79,7 @@ export const HomeRulesSection = () => {
   );
 };
 
-const HomeRulesStyle = styled.div`
+const HomeRulesStyle = styled(motion.div)`
   @media only screen and (max-width: 1200px) {
     .reverseFlex {
       display: flex !important;

@@ -31,6 +31,8 @@ import { RegistrationSchemas } from "../Schemas/RegistrationSchema";
 import { DotLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 import useWindowDimensions from "../utils/GetWindowDimensions";
+import { motion } from "framer-motion";
+import { PageAnimation } from "../GlobalStyles/Animation";
 
 export const RegistrationPage = () => {
   const [showShadow, setShowShadow] = useState(false);
@@ -98,7 +100,12 @@ export const RegistrationPage = () => {
   });
 
   return (
-    <>
+    <motion.div
+      exit="exit"
+      variants={PageAnimation}
+      initial="hidden"
+      animate="show"
+    >
       {width > 1200 ? (
         <NavBar />
       ) : (
@@ -356,7 +363,7 @@ export const RegistrationPage = () => {
           ""
         )}
       </RegistrationPageStyle>
-    </>
+    </motion.div>
   );
 };
 

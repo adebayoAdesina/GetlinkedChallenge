@@ -24,6 +24,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 -> Form Validation using React Fumik and Yup.
 
+-> Animations using Framer-motion library and react-intersection-observer library.
+
 -> Spin animation doing fetching state using react-spinners library.
 
 -> Most CSS are writing in JavaScript using React Styled-Component.
@@ -38,15 +40,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## For Web View
 
 ### Landing Page
-<img src="/read_me_screenshot/webLanding.jpeg"  alt='webview-landing-page>
+<img src="./read_me_screenshot/webLanding.jpeg"  alt='webview-landing-page>
 
 
 ### Registration Page
-<img src="/read_me_screenshot/webReg.jpeg" alt='webview-registration-page>
+<img src="./read_me_screenshot/webReg.jpeg" alt='webview-registration-page>
 
 
 ### Contact Page
-<img src="/read_me_screenshot/webContact.jpeg"  alt='webview-contact-page>
+<img src="./read_me_screenshot/webContact.jpeg"  alt='webview-contact-page>
 
 
 

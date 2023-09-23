@@ -14,6 +14,9 @@ import {
   WhiteStar,
 } from "../../utils/image";
 import { JudgingListView } from "../JudgingListView";
+import { RightSlideAnimation } from "../../GlobalStyles/Animation";
+import { UseScroll } from "../../utils/UseScroll";
+import { motion } from "framer-motion";
 
 export const HomeJudgingCriteriaSection = () => {
   const ListOfCriteria = [
@@ -49,8 +52,13 @@ export const HomeJudgingCriteriaSection = () => {
       specific technologies or APIs, and any other competition-specific requirements.`,
     },
   ];
+
+  const [element, controls] = UseScroll();
   return (
-    <HomeJudgingCriteriaStyle>
+    <HomeJudgingCriteriaStyle ref={element}
+    animate={controls}
+    variants={RightSlideAnimation}
+    initial="hidden">
       <Container>
         <Row>
           <LeftSectionStyle className="col-6">
@@ -109,7 +117,7 @@ export const HomeJudgingCriteriaSection = () => {
   );
 };
 
-const HomeJudgingCriteriaStyle = styled.div`
+const HomeJudgingCriteriaStyle = styled(motion.div)`
   padding-top: 2%;
   padding-bottom: 2%;
 `;

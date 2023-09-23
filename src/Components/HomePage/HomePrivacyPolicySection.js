@@ -8,6 +8,9 @@ import {
 import { Container, Row } from "react-bootstrap";
 import { LicensingPolicyListView } from "../LicensingPolicyListView";
 import { LockImage } from "../../utils/image";
+import { UseScroll } from "../../utils/UseScroll";
+import { ScaleSectionAnimation } from "../../GlobalStyles/Animation";
+import { motion } from "framer-motion";
 
 export const HomePrivacyPolicySection = () => {
   const LicensingData = [
@@ -16,8 +19,15 @@ export const HomePrivacyPolicySection = () => {
     `You are licensed to use the item available at any free source
         sites, for your project developement`,
   ];
+  const [element, controls] = UseScroll();
+
   return (
-    <HomePrivacyPolicyStyle>
+    <HomePrivacyPolicyStyle
+      ref={element}
+      animate={controls}
+      variants={ScaleSectionAnimation}
+      initial="hidden"
+    >
       <Container>
         <Row className="PolicySection">
           <div className="col-6 mt-5 pt-5 leftPolicySection">
@@ -62,7 +72,7 @@ export const HomePrivacyPolicySection = () => {
           <Blur
             style={{
               transform: "translate(-20rem, 50rem)",
-              filter: 'blur(150px)'
+              filter: "blur(150px)",
             }}
           />
 
@@ -103,7 +113,7 @@ export const HomePrivacyPolicySection = () => {
   );
 };
 
-const HomePrivacyPolicyStyle = styled.div`
+const HomePrivacyPolicyStyle = styled(motion.div)`
   margin-top: 2%;
   margin-bottom: 2%;
   @media only screen and (max-width: 1200px) {

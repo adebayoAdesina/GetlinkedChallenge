@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import { LandingPage } from "./Views/LandingPage";
 import { ContactPage } from "./Views/ContactPage";
@@ -10,6 +10,8 @@ import {
   BoomImageURL,
   MaleWalking,
 } from "./utils/image";
+import { AnimatePresence } from "framer-motion";
+import ScrollTop from "./utils/ScrollTop";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -17,9 +19,10 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 8000);
+    }, 4000);
   }, []);
 
+  const location = useLocation();
   return (
     <>
       {loading ? (
@@ -39,11 +42,16 @@ const App = () => {
           <img src={MaleWalking} alt="boom_img" className="male-image" />
         </div>
       ) : (
-        <Routes>
-          <Route path="" element={<LandingPage />} exact />
-          <Route path="/contact" element={<ContactPage />} exact />
-          <Route path="/register" element={<RegistrationPage />} exact />
-        </Routes>
+        <>
+        <ScrollTop/>
+        <AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            <Route path="" element={<LandingPage />} exact />
+            <Route path="/contact" element={<ContactPage />} exact />
+            <Route path="/register" element={<RegistrationPage />} exact />
+          </Routes>
+        </AnimatePresence>
+        </>
       )}
     </>
   );

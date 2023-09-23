@@ -12,32 +12,28 @@ import { HomePartnerPageSection } from "../Components/HomePage/HomePartnerPageSe
 import { HomePrivacyPolicySection } from "../Components/HomePage/HomePrivacyPolicySection";
 import { FooterSection } from "../Components/FooterSection";
 import { NavBar } from "../Components/NavBar";
+import { motion } from "framer-motion";
+import { PageAnimation } from "../GlobalStyles/Animation";
+import { LandingHeroLine } from "../utils/LandingHeroLine";
 
 export const LandingPage = () => {
   return (
-    <div>
+    <motion.div
+      exit="exit"
+      variants={PageAnimation}
+      initial="hidden"
+      animate="show"
+    >
       <NavBar />
       <Container>
-      <Row>
-        <TopRowText varient="center" className="mt-4">
-          Igniting a Revolution in HR Innovation{" "}
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="255"
-              height="17"
-              viewBox="0 0 255 17"
-              fill="none"
-            >
-              <path
-                d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
-                stroke="#FF26B9"
-                stroke-width="5"
-              />
-            </svg>
-          </div>
-        </TopRowText>
-      </Row>
+        <Row>
+          <TopRowText varient="center" className="mt-4">
+            Igniting a Revolution in HR Innovation{" "}
+            <div>
+              <LandingHeroLine/>
+            </div>
+          </TopRowText>
+        </Row>
       </Container>
       <HomeHeroSection />
       <hr />
@@ -54,7 +50,7 @@ export const LandingPage = () => {
       <HomePartnerPageSection />
       <HomePrivacyPolicySection />
       <FooterSection />
-    </div>
+    </motion.div>
   );
 };
 const TopRowText = styled.div`
