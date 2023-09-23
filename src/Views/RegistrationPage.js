@@ -30,6 +30,7 @@ import { useFormik } from "formik";
 import { RegistrationSchemas } from "../Schemas/RegistrationSchema";
 import { DotLoader } from "react-spinners";
 import { Link } from "react-router-dom";
+import useWindowDimensions from "../utils/GetWindowDimensions";
 
 export const RegistrationPage = () => {
   const [showShadow, setShowShadow] = useState(false);
@@ -46,6 +47,7 @@ export const RegistrationPage = () => {
   }, [dispatch]);
 
   const { categories } = useSelector((state) => state.isCategories);
+  const { width } = useWindowDimensions();
 
   const registerNewUser = async (value, e) => {
     setisLoading(true);
@@ -97,16 +99,21 @@ export const RegistrationPage = () => {
 
   return (
     <>
-      <NavBar />
+      {width > 1200 ? (
+        <NavBar />
+      ) : (
+        <RegisterTextStyle className="pt-5 mx-5">Register</RegisterTextStyle>
+      )}
+
       <RegistrationPageStyle className="mt-5 pt-5">
         <Container>
           <Row>
             <div className="registrationLeft col-12 col-md-6">
-            <Blur
-                    style={{
-                      transform: "translate(-35rem, 0rem)",
-                    }}
-                  />
+              <Blur
+                style={{
+                  transform: "translate(-35rem, 0rem)",
+                }}
+              />
               <RegistrationPageImageStyle
                 src={RegisterPageImage}
                 alt="registration_image"
@@ -115,7 +122,12 @@ export const RegistrationPage = () => {
             <div className="col-12 col-md-6 ">
               <ContactBoxStyle className="p-5">
                 <div>
-                  <ContactTopColoredText>Register</ContactTopColoredText>
+                  {width < 1200 ? (
+                    ""
+                  ) : (
+                    <ContactTopColoredText>Register</ContactTopColoredText>
+                  )}
+
                   <PartTextStyle className="mt-5 mb-3">
                     Be part of this movement! &nbsp;&nbsp;&nbsp;
                     <div className="workingSection">
@@ -130,8 +142,8 @@ export const RegistrationPage = () => {
                     CREATE YOUR ACCOUNT
                   </CreateAccountTextStyle>
                   <form onSubmit={formik.handleSubmit}>
-                    <Row className="mt-3">
-                      <div className="col-6">
+                    <Row>
+                      <div className="col-12 col-md-6 mt-3">
                         <label className="my-2">Team’s Name</label>
                         <input
                           className="registerOne w-100"
@@ -145,7 +157,7 @@ export const RegistrationPage = () => {
                           </span>
                         )}
                       </div>
-                      <div className="col-6">
+                      <div className="col-12 col-md-6 mt-3">
                         <label className="my-2">Phone</label>
                         <input
                           className="registerOne w-100"
@@ -160,8 +172,8 @@ export const RegistrationPage = () => {
                         )}
                       </div>
                     </Row>
-                    <Row className="mt-3">
-                      <div className="col-6">
+                    <Row>
+                      <div className="col-12 col-md-6 mt-3">
                         <label className="my-2">Email</label>
                         <input
                           className="registerOne w-100"
@@ -175,7 +187,7 @@ export const RegistrationPage = () => {
                           </span>
                         )}
                       </div>
-                      <div className="col-6">
+                      <div className="col-12 col-md-6 mt-3">
                         <label className="my-2">Project Topic</label>
                         <input
                           className="registerOne w-100"
@@ -347,6 +359,15 @@ export const RegistrationPage = () => {
     </>
   );
 };
+
+const RegisterTextStyle = styled.div`
+  color: #d434fe;
+  font-family: Clash Display;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
 
 const RegistrationPageStyle = styled.div`
   background: #150e28;
