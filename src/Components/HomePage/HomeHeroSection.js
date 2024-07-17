@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Container } from "react-bootstrap";
 import styled from "styled-components";
 import {
@@ -13,10 +13,11 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FadeAnimation, FadeSectionAnimation, ScaleAnimation } from "../../GlobalStyles/Animation";
 import { UseScroll } from "../../utils/UseScroll";
+import HeroImageURL from '../../images/hero-image.png'
 
 export const HomeHeroSection = () => {
-  const HeroImageURL =
-    "https://s3-alpha-sig.figma.com/img/2cea/d700/cfbd4eb06b68c33fac2a89295904df2c?Expires=1696204800&Signature=Pl8bxQP7ZWA8IQ~PcHxowSaaCsU8KsCWsjtAdV6WbycHB9CRSS3HmiUrIoLq7x8FSDNA5qhlVqpaF9PjBCB7vHkotMawDRLRihUUfrQSiMjhzG1sXACFmEqCbgbAOnmThDsh05K5hvMNlu0aZjKfhaWi3WigTfEpzQu79zcsA-xggSvAG3k5-pvQEoXQiViO6zISNYUBUgSoT6iO4SJ7jwGKZOA1tL3MGCzbwMyaTEqn8yLde~kSrWX34kogEmUFU9ziDrla9dgaxjRFUFtuDiw2J5NKDjGqV5QjoAQwb~SsNsFDcCq3Jq76s-4WdTGa2vBih1ibhsrAHsdeW0m6xg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
+  // const HeroImageURL =
+  //   "https://s3-alpha-sig.figma.com/img/2cea/d700/cfbd4eb06b68c33fac2a89295904df2c?Expires=1696204800&Signature=Pl8bxQP7ZWA8IQ~PcHxowSaaCsU8KsCWsjtAdV6WbycHB9CRSS3HmiUrIoLq7x8FSDNA5qhlVqpaF9PjBCB7vHkotMawDRLRihUUfrQSiMjhzG1sXACFmEqCbgbAOnmThDsh05K5hvMNlu0aZjKfhaWi3WigTfEpzQu79zcsA-xggSvAG3k5-pvQEoXQiViO6zISNYUBUgSoT6iO4SJ7jwGKZOA1tL3MGCzbwMyaTEqn8yLde~kSrWX34kogEmUFU9ziDrla9dgaxjRFUFtuDiw2J5NKDjGqV5QjoAQwb~SsNsFDcCq3Jq76s-4WdTGa2vBih1ibhsrAHsdeW0m6xg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
 
   const AnimateHeroContainer = {
     hidden: { x: -300 },
@@ -32,6 +33,23 @@ export const HomeHeroSection = () => {
   };
 
   const [element, controls] = UseScroll();
+
+  const [date, setDate] = useState({
+    hour: "",
+    min: "",
+    sec: "",
+  })
+
+  useEffect(() => {
+    
+  setDate({
+    hour: new Date().getHours(),
+    min: new Date().getMinutes(),
+    sec: new Date().getSeconds(),
+  })
+    
+  }, [date])
+  
   return (
     <Container>
       <HomeHeroSectionStyled ref={element}
@@ -93,11 +111,11 @@ export const HomeHeroSection = () => {
               />
               <Row className="centerReg">
                 <HeroTimeSectionStyle>
-                  <h3>00</h3>
+                  <h3>{date.hour}</h3>
                   <h6>h</h6>
-                  <h3>00</h3>
+                  <h3>{date.min}</h3>
                   <h6>m</h6>
-                  <h3>00</h3>
+                  <h3>{date.sec}</h3>
                   <h6>s</h6>
                 </HeroTimeSectionStyle>
               </Row>
